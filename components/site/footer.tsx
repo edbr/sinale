@@ -23,11 +23,10 @@ const footerGroups = [
     ],
   },
   {
-    title: "Popular",
+    title: "Connect",
     links: [
-      { label: "Cursor vs Claude Code", href: "/comparisons/cursor-vs-claude-code" },
-      { label: "Claude vs ChatGPT", href: "/comparisons/claude-vs-chatgpt" },
-      { label: "AI Coding Stack", href: "/workflows/ai-coding-stack" },
+      { label: "LinkedIn", href: "https://linkedin.com/in/edbelluti" },
+      { label: "Website", href: "https://edbelluti.com/" },
     ],
   },
 ]
@@ -58,15 +57,29 @@ export function SiteFooter() {
             <div key={group.title}>
               <h2 className="text-sm font-medium">{group.title}</h2>
               <div className="mt-3 grid gap-2">
-                {group.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {group.links.map((link) => {
+                  const isExternal = link.href.startsWith("http")
+
+                  return isExternal ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-muted-foreground transition hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-sm text-muted-foreground transition hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           ))}
