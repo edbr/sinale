@@ -9,7 +9,6 @@ const footerGroups = [
       { label: "Reviews", href: "/reviews" },
       { label: "Workflows", href: "/workflows" },
       { label: "Tools", href: "/tools" },
-      { label: "About", href: "/about" },
     ],
   },
   {
@@ -23,9 +22,20 @@ const footerGroups = [
     ],
   },
   {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Disclosure", href: "/disclosure" },
+      { label: "Terms", href: "/terms" },
+    ],
+  },
+  {
     title: "Connect",
     links: [
-      { label: "LinkedIn", href: "https://linkedin.com/in/edbelluti" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/edbelluti/" },
+      { label: "GitHub", href: "https://github.com/edbr" },
       { label: "Website", href: "https://edbelluti.com/" },
     ],
   },
@@ -52,7 +62,7 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <h2 className="text-sm font-medium">{group.title}</h2>
