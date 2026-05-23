@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check, X } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const useCases = [
   "Market research",
@@ -93,6 +95,8 @@ export function PerplexityReview() {
             research tools available today.
           </p>
         </div>
+
+        <ArticleCta tool="Perplexity" href={toolLinks.perplexity} placement="top" />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold">What is Perplexity?</h2>
@@ -243,6 +247,10 @@ export function PerplexityReview() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="Perplexity" href={toolLinks.perplexity} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -294,6 +302,9 @@ export function PerplexityReview() {
             than traditional search.
           </p>
         </section>
+
+
+        <ArticleCta tool="Perplexity" href={toolLinks.perplexity} placement="bottom" />
       </article>
     </main>
   )

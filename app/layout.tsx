@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {  Inter, Manrope, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,15 +17,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sinale.cc"),
-  title: "Sinale",
-  description: "AI tools, SaaS software, and founder resources.",
-  alternates: {
-    canonical: "/",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  ...pageMetadata({
+    title: "Sinale",
+    description: "AI tools, SaaS software, and founder resources.",
+    path: "/",
+  }),
 };
 
 const geistMono = Geist_Mono({
@@ -40,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${inter.variable} ${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SiteHeader />

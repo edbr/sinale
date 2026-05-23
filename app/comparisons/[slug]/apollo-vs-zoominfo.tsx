@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const verdictRows = [
   ["Ease of Use", "Apollo"],
@@ -130,6 +132,8 @@ export function ApolloVsZoomInfoComparison() {
             enterprise GTM workflows.
           </p>
         </div>
+
+        <ArticleCta tool="Apollo" href={toolLinks.apollo} placement="top" />
 
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Quick Verdict</h2>
@@ -277,6 +281,10 @@ export function ApolloVsZoomInfoComparison() {
           ))}
         </section>
 
+
+
+        <ArticleCta tool="Apollo" href={toolLinks.apollo} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -310,6 +318,9 @@ export function ApolloVsZoomInfoComparison() {
             a complex enterprise revenue organization, evaluate ZoomInfo.
           </p>
         </section>
+
+
+        <ArticleCta tool="Apollo" href={toolLinks.apollo} placement="bottom" />
       </article>
     </main>
   )

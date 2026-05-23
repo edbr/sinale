@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const verdictRows = [
   ["Beginner Friendliness", "Cursor"],
@@ -92,6 +94,8 @@ export function CursorVsClaudeCodeComparison() {
             better reasoning engine.
           </p>
         </div>
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="top" />
 
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Quick Verdict</h2>
@@ -280,6 +284,10 @@ export function CursorVsClaudeCodeComparison() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -313,6 +321,9 @@ export function CursorVsClaudeCodeComparison() {
             knowing when to use each.
           </p>
         </section>
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="bottom" />
       </article>
     </main>
   )

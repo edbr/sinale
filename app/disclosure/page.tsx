@@ -1,10 +1,13 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = pageMetadata({
   title: "Affiliate Disclosure | Sinale",
   description:
     "Read Sinale's affiliate disclosure and learn how we evaluate AI tools and software products.",
-}
+  path: "/disclosure",
+})
 
 export default function DisclosurePage() {
   return (

@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Best AI Coding Assistants (2026): Tested and Ranked | Sinale",
+  description:
+    "Compare the best AI coding assistants in 2026, including Cursor, Claude Code, Windsurf, GitHub Copilot, Replit Agent, and Lovable.",
+  path: "/developers/best-ai-coding-assistants",
+})
 
 const tools = [
   {
@@ -239,6 +249,8 @@ export default function BestAiCodingAssistantsPage() {
           </p>
         </div>
 
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="top" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Comparison Table</h2>
           <div className="mt-5 divide-y rounded-lg border">
@@ -342,6 +354,10 @@ export default function BestAiCodingAssistantsPage() {
           </div>
         </section>
 
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">My Recommendation</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
@@ -368,6 +384,9 @@ export default function BestAiCodingAssistantsPage() {
             assistant I recommend most often.
           </p>
         </section>
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="bottom" />
       </article>
     </main>
   )

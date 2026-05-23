@@ -2,6 +2,15 @@ import Link from "next/link"
 import { ArrowLeft, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Search | Sinale",
+  description:
+    "Search Sinale for AI tools, reviews, comparisons, workflows, and best-of guides.",
+  path: "/search",
+  index: false,
+})
 
 export default async function SearchPage({
   searchParams,

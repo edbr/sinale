@@ -4,12 +4,14 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About | Sinale",
   description:
     "Meet Eduardo Belluti and learn why Sinale focuses on practical AI workflows, honest reviews, and real-world use cases.",
-}
+  path: "/about",
+})
 
 const principles = [
   "Test AI tools inside real design, product, development, and startup workflows.",

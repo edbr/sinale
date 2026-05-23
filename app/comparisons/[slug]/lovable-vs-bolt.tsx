@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const verdictRows = [
   ["Ease of Use", "Lovable"],
@@ -91,6 +93,8 @@ export function LovableVsBoltComparison() {
             Lovable feels like an AI-powered product builder.
           </p>
         </div>
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="top" />
 
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Quick Verdict</h2>
@@ -282,6 +286,10 @@ export function LovableVsBoltComparison() {
           </div>
         </section>
 
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -318,6 +326,9 @@ export function LovableVsBoltComparison() {
             to working application.
           </p>
         </section>
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="bottom" />
       </article>
     </main>
   )

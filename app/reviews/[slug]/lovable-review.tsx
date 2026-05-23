@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check, X } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const capabilities = [
   "Frontend interfaces",
@@ -96,6 +98,8 @@ export function LovableReview() {
             with a product team.
           </p>
         </div>
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="top" />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold">What is Lovable?</h2>
@@ -227,6 +231,10 @@ export function LovableReview() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -280,6 +288,9 @@ export function LovableReview() {
             practices and, eventually, human developers in the loop.
           </p>
         </section>
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="bottom" />
       </article>
     </main>
   )

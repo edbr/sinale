@@ -1,10 +1,13 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Sinale",
   description:
     "Read the Sinale privacy policy, including analytics, cookies, affiliate links, and contact information.",
-}
+  path: "/privacy",
+})
 
 export default function PrivacyPage() {
   return (

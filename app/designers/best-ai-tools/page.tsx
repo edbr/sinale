@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Best AI Tools for Designers (2026) | Sinale",
+  description:
+    "A practical ranking of the best AI tools for designers across UX research, design thinking, interface design, prototyping, visual generation, and meetings.",
+  path: "/designers/best-ai-tools",
+})
 
 const tools = [
   {
@@ -207,6 +217,8 @@ export default function BestAiToolsForDesignersPage() {
           </p>
         </div>
 
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="top" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Comparison Table</h2>
           <div className="mt-5 divide-y rounded-lg border">
@@ -285,6 +297,10 @@ export default function BestAiToolsForDesignersPage() {
           </div>
         </section>
 
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -307,6 +323,9 @@ export default function BestAiToolsForDesignersPage() {
             successful design outcomes.
           </p>
         </section>
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="bottom" />
       </article>
     </main>
   )

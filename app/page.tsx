@@ -9,6 +9,14 @@ import {
   trendingTools,
   workflows,
 } from "@/lib/site-content"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Sinale | AI Tools, SaaS Software, and Founder Resources",
+  description:
+    "Find practical AI tool reviews, comparisons, workflows, and best-of guides for designers, developers, product managers, analysts, and founders.",
+  path: "/",
+})
 
 export default function HomePage() {
   return (

@@ -1,5 +1,13 @@
 import { SectionPage } from "@/app/section-page"
+import { pageMetadata } from "@/lib/seo"
 import { comparisons } from "@/lib/site-content"
+
+export const metadata = pageMetadata({
+  title: "AI Tool Comparisons | Sinale",
+  description:
+    "Compare AI tools side by side with practical breakdowns for product teams, founders, designers, developers, and operators.",
+  path: "/comparisons",
+})
 
 export default function ComparisonsPage() {
   return (

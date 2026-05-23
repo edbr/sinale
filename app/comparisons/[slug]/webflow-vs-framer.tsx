@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const verdictRows = [
   ["Ease of Use", "Framer"],
@@ -130,6 +132,8 @@ export function WebflowVsFramerComparison() {
             would probably choose Framer.
           </p>
         </div>
+
+        <ArticleCta tool="Webflow" href={toolLinks.webflow} placement="top" />
 
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Quick Verdict</h2>
@@ -276,6 +280,10 @@ export function WebflowVsFramerComparison() {
           ))}
         </section>
 
+
+
+        <ArticleCta tool="Webflow" href={toolLinks.webflow} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -308,6 +316,9 @@ export function WebflowVsFramerComparison() {
             structure. Choose Framer for speed and polish.
           </p>
         </section>
+
+
+        <ArticleCta tool="Webflow" href={toolLinks.webflow} placement="bottom" />
       </article>
     </main>
   )

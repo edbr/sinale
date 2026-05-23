@@ -1,10 +1,13 @@
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Service | Sinale",
   description:
     "Read the Sinale terms of service for website use, content accuracy, affiliate relationships, and third-party links.",
-}
+  path: "/terms",
+})
 
 const terms = [
   {

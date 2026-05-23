@@ -2,7 +2,15 @@ import Link from "next/link"
 import { ArrowRight, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
 import { aiToolCategories } from "@/lib/site-content"
+
+export const metadata = pageMetadata({
+  title: "AI Tool Directory | Sinale",
+  description:
+    "Browse AI tools by jobs to be done, including coding assistants, research tools, meeting assistants, video tools, sales tools, and more.",
+  path: "/tools",
+})
 
 const featuredJobs = [
   "AI coding assistant",

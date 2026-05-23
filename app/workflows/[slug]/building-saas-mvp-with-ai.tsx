@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const steps = [
   {
@@ -168,6 +170,8 @@ export function BuildingSaasMvpWithAiWorkflow() {
           </p>
         </div>
 
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="top" />
+
         <section className="mt-12 grid gap-6">
           {steps.map((step, index) => (
             <div key={step.title} className="rounded-lg border bg-card p-6">
@@ -268,6 +272,10 @@ export function BuildingSaasMvpWithAiWorkflow() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-foreground p-6 text-background">
           <h2 className="text-xl font-semibold">Bottom line</h2>
           <p className="mt-3 leading-7">
@@ -276,6 +284,9 @@ export function BuildingSaasMvpWithAiWorkflow() {
             feedback loop between idea, product, and customer.
           </p>
         </section>
+
+
+        <ArticleCta tool="Lovable" href={toolLinks.lovable} placement="bottom" />
       </article>
     </main>
   )

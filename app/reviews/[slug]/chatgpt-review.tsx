@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check, X } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const useCases = [
   "Product strategy",
@@ -98,6 +100,8 @@ export function ChatGPTReview() {
             start and often the only AI tool they need.
           </p>
         </div>
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="top" />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold">What is ChatGPT?</h2>
@@ -225,6 +229,10 @@ export function ChatGPTReview() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -274,6 +282,9 @@ export function ChatGPTReview() {
             part of any modern AI stack.
           </p>
         </section>
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="bottom" />
       </article>
     </main>
   )

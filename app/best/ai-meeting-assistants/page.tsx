@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Best AI Meeting Assistants (2026): Tested and Ranked | Sinale",
+  description:
+    "Compare the best AI meeting assistants in 2026, including Granola, Fathom, Fireflies, Otter, tl;dv, Read.ai, Avoma, and Fellow.",
+  path: "/best/ai-meeting-assistants",
+})
 
 const tools = [
   {
@@ -285,6 +295,8 @@ export default function BestAiMeetingAssistantsPage() {
           </p>
         </div>
 
+        <ArticleCta tool="Granola" href={toolLinks.granola} placement="top" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Comparison Table</h2>
           <div className="mt-5 divide-y rounded-lg border">
@@ -383,6 +395,10 @@ export default function BestAiMeetingAssistantsPage() {
           </div>
         </section>
 
+
+
+        <ArticleCta tool="Granola" href={toolLinks.granola} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">My Recommendation</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -407,6 +423,9 @@ export default function BestAiMeetingAssistantsPage() {
             context after the call ends.
           </p>
         </section>
+
+
+        <ArticleCta tool="Granola" href={toolLinks.granola} placement="bottom" />
       </article>
     </main>
   )

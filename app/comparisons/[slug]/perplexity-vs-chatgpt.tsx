@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const verdictRows = [
   ["Web Research", "Perplexity"],
@@ -97,6 +99,8 @@ export function PerplexityVsChatGPTComparison() {
             changes how each tool fits into your workflow.
           </p>
         </div>
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="top" />
 
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Quick Verdict</h2>
@@ -332,6 +336,10 @@ export function PerplexityVsChatGPTComparison() {
           </div>
         </section>
 
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -365,6 +373,9 @@ export function PerplexityVsChatGPTComparison() {
             subscription. For power users, the combination is difficult to beat.
           </p>
         </section>
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="bottom" />
       </article>
     </main>
   )

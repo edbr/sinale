@@ -1,7 +1,17 @@
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "My Product Design AI Stack (2026) | Sinale",
+  description:
+    "The product design AI stack I use every week for research, strategy, prototyping, implementation, competitive analysis, and meeting notes.",
+  path: "/designers/product-design-ai-stack",
+})
 
 const tools = [
   {
@@ -211,6 +221,8 @@ export default function ProductDesignAiStackPage() {
           </p>
         </div>
 
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="top" />
+
         <section className="mt-12 grid gap-6">
           {tools.map((tool) => (
             <div key={tool.name} className="rounded-lg border bg-card p-6">
@@ -316,6 +328,10 @@ export default function ProductDesignAiStackPage() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-foreground p-6 text-background">
           <h2 className="text-xl font-semibold">Bottom line</h2>
           <p className="mt-3 leading-7">
@@ -324,6 +340,9 @@ export default function ProductDesignAiStackPage() {
             competitive advantage.
           </p>
         </section>
+
+
+        <ArticleCta tool="ChatGPT" href={toolLinks.chatgpt} placement="bottom" />
       </article>
     </main>
   )

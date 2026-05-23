@@ -1,7 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Check, X } from "lucide-react"
 
+import { ArticleCta } from "@/components/article/article-cta"
 import { Button } from "@/components/ui/button"
+import { toolLinks } from "@/lib/tool-links"
 
 const useCases = [
   "Building Next.js prototypes",
@@ -92,6 +94,8 @@ export function CursorReview() {
             implementation.
           </p>
         </div>
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="top" />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold">What is Cursor?</h2>
@@ -211,6 +215,10 @@ export function CursorReview() {
           </p>
         </section>
 
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="mid" />
+
         <section className="mt-12 rounded-lg border bg-card p-6">
           <h2 className="text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -259,6 +267,9 @@ export function CursorReview() {
             evaluating other coding assistants.
           </p>
         </section>
+
+
+        <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="bottom" />
       </article>
     </main>
   )

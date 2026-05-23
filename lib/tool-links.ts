@@ -1,0 +1,16 @@
+export const toolLinks = {
+  apollo: "https://www.apollo.io/",
+  chatgpt: "https://chatgpt.com/",
+  claude: "https://claude.ai/",
+  cursor: "https://www.cursor.com/",
+  fathom: "https://fathom.video/",
+  figma: "https://www.figma.com/",
+  framer: "https://www.framer.com/",
+  granola: "https://www.granola.ai/",
+  lovable: "https://lovable.dev/",
+  notion: "https://www.notion.com/product/ai",
+  perplexity: "https://www.perplexity.ai/",
+  replit: "https://replit.com/",
+  webflow: "https://webflow.com/",
+  windsurf: "https://windsurf.com/",
+}

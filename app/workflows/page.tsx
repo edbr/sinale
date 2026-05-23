@@ -1,5 +1,13 @@
 import { SectionPage } from "@/app/section-page"
+import { pageMetadata } from "@/lib/seo"
 import { workflows } from "@/lib/site-content"
+
+export const metadata = pageMetadata({
+  title: "AI Workflows | Sinale",
+  description:
+    "Explore practical AI workflows for product design, coding, research, analytics, startup execution, and SaaS MVPs.",
+  path: "/workflows",
+})
 
 export default function WorkflowsPage() {
   return (
