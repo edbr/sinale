@@ -15,9 +15,16 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Stack Signal",
-  description:
-    "Practical AI tool reviews, workflows, and comparisons for modern tech teams.",
+  metadataBase: new URL("https://www.sinale.cc"),
+  title: "Sinale",
+  description: "AI tools, SaaS software, and founder resources.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const geistMono = Geist_Mono({
