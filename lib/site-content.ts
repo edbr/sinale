@@ -105,6 +105,19 @@ export const comparisons: CardItem[] = [
     href: "/comparisons/windsurf-vs-cursor",
   },
   {
+    title:
+      "Apollo vs ZoomInfo (2026): Which Sales Intelligence Platform Should You Use?",
+    description:
+      "A practical comparison for startups, sales teams, enterprise GTM, enrichment, and outbound workflows.",
+    href: "/comparisons/apollo-vs-zoominfo",
+  },
+  {
+    title: "Webflow vs Framer (2026): Which Website Builder Should Designers Use?",
+    description:
+      "A practical comparison for designers, startups, landing pages, CMS sites, SEO, and client work.",
+    href: "/comparisons/webflow-vs-framer",
+  },
+  {
     title: "Notion AI vs ChatGPT",
     description:
       "How embedded workspace AI compares with a general-purpose assistant for team knowledge work.",
@@ -220,6 +233,41 @@ export const founderGuides: CardItem[] = [
     description:
       "A founder stack for research, strategy, MVP development, automation, analytics, support, meetings, and marketing.",
     href: "/founders/best-ai-tools",
+  },
+]
+
+export const bestOfGuides: CardItem[] = [
+  {
+    title:
+      "Best AI Tools for Founders (2026): The Stack I Would Use to Build a Startup Today",
+    description:
+      "A founder stack for research, strategy, MVP development, automation, analytics, support, meetings, and marketing.",
+    href: "/founders/best-ai-tools",
+  },
+  {
+    title: "Best AI Coding Assistants (2026): Tested and Ranked",
+    description:
+      "A practical ranking of Cursor, Claude Code, Windsurf, GitHub Copilot, Replit Agent, and Lovable.",
+    href: "/developers/best-ai-coding-assistants",
+  },
+  {
+    title:
+      "Best AI Tools for Designers (2026): The Tools That Actually Improve Design Work",
+    description:
+      "A practical design stack for research, ideation, UX writing, interface design, prototyping, and implementation.",
+    href: "/designers/best-ai-tools",
+  },
+  {
+    title: "Best AI Tools for Product Managers (2026): The Tools I Actually Use",
+    description:
+      "A practical PM stack for strategy, research, meetings, analytics, documentation, prototyping, and execution.",
+    href: "/product-managers/best-ai-tools",
+  },
+  {
+    title: "Best AI Meeting Assistants (2026): Tested and Ranked",
+    description:
+      "A practical guide to Granola, Fathom, Fireflies, Otter, tl;dv, Read.ai, Avoma, and Fellow.",
+    href: "/best/ai-meeting-assistants",
   },
 ]
 

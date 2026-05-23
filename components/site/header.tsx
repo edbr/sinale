@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 const primaryNav = [
   { label: "Comparisons", href: "/comparisons" },
   { label: "Reviews", href: "/reviews" },
+  { label: "Best Of", href: "/best" },
   { label: "Workflows", href: "/workflows" },
   { label: "Tools", href: "/tools" },
 ]

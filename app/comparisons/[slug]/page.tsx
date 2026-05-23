@@ -1,9 +1,11 @@
 import { ArticlePage } from "@/app/article-page"
 import { comparisons } from "@/lib/site-content"
+import { ApolloVsZoomInfoComparison } from "./apollo-vs-zoominfo"
 import { ClaudeVsChatGPTComparison } from "./claude-vs-chatgpt"
 import { CursorVsClaudeCodeComparison } from "./cursor-vs-claude-code"
 import { LovableVsBoltComparison } from "./lovable-vs-bolt"
 import { PerplexityVsChatGPTComparison } from "./perplexity-vs-chatgpt"
+import { WebflowVsFramerComparison } from "./webflow-vs-framer"
 import { WindsurfVsCursorComparison } from "./windsurf-vs-cursor"
 
 export default async function ComparisonPage({
@@ -31,6 +33,14 @@ export default async function ComparisonPage({
 
   if (slug === "windsurf-vs-cursor") {
     return <WindsurfVsCursorComparison />
+  }
+
+  if (slug === "apollo-vs-zoominfo") {
+    return <ApolloVsZoomInfoComparison />
+  }
+
+  if (slug === "webflow-vs-framer") {
+    return <WebflowVsFramerComparison />
   }
 
   return (
