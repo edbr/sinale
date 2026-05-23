@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Search } from "lucide-react"
 
@@ -23,10 +24,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-foreground text-sm text-background">
-            S
-          </span>
-          <span>Stack Signal</span>
+          <Image
+            src="/logo.png"
+            alt="Sinale logo"
+            width={32}
+            height={32}
+            className="size-8"
+            priority
+          />
+          <span>Sinale</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

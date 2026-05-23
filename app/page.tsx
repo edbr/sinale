@@ -12,15 +12,12 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <section className="mx-auto grid min-h-[680px] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.05fr_0.95fr] md:py-24">
+    <main className="hero-glow min-h-screen bg-background text-foreground">
+      <section className=" mx-auto grid min-h-170 max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.05fr_0.95fr] md:py-24">
         <div>
-          <p className="mb-5 inline-flex rounded-full border px-4 py-1.5 text-sm text-muted-foreground">
-            Stack Signal
-          </p>
 
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
-            Find the right AI tools for the way you work.
+          <h1 className="max-w-4xl text-6xl font-heading font-extrabold tracking-[-0.06em] leading-[0.92] md:text-7xl">
+          Find the <span className="text-primary">right AI tools</span> for the way you work.
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
@@ -72,20 +69,20 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="rounded-lg border bg-card p-4 shadow-sm">
+        <div className="rounded-[2rem] border border-border/80 bg-card/80 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur">
           <div className="border-b pb-4">
             <p className="text-sm font-medium">Role-based AI stack map</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Compare tools by workflow, team role, and practical fit.
             </p>
           </div>
-          <div className="grid gap-3 pt-4">
+          <div className="grid gap-3 pt-4 ">
             {pillars.slice(0, 5).map((pillar, index) => (
               <div
                 key={pillar.title}
-                className="flex items-center justify-between rounded-lg border bg-background p-3"
+                className="flex items-center justify-between rounded-lg border bg-background p-3 transition hover:-translate-y-0.5 hover:bg-card hover:shadow-md"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 ">
                   <div className="flex size-9 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
                     <pillar.icon className="size-4" />
                   </div>
@@ -205,7 +202,7 @@ export default function HomePage() {
               <Link
                 key={workflow.title}
                 href={workflow.href}
-                className="group flex min-h-[260px] flex-col justify-between rounded-lg border bg-background p-5 transition hover:-translate-y-1 hover:shadow-lg lg:col-span-1"
+                className="group flex min-h-65 flex-col justify-between rounded-lg border bg-background p-5 transition hover:-translate-y-1 hover:shadow-lg lg:col-span-1"
               >
                 <div>
                   <div className="mb-5 flex items-center justify-between">

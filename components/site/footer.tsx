@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 const footerGroups = [
@@ -8,6 +9,7 @@ const footerGroups = [
       { label: "Reviews", href: "/reviews" },
       { label: "Workflows", href: "/workflows" },
       { label: "Tools", href: "/tools" },
+      { label: "About", href: "/about" },
     ],
   },
   {
@@ -36,10 +38,14 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_2fr]">
         <div>
           <Link href="/" className="flex items-center gap-2 font-semibold">
-            <span className="flex size-8 items-center justify-center rounded-lg bg-foreground text-sm text-background">
-              S
-            </span>
-            <span>Stack Signal</span>
+            <Image
+              src="/logo.png"
+              alt="Sinale logo"
+              width={32}
+              height={32}
+              className="size-8"
+            />
+            <span>Sinale</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
             Practical AI tool reviews, workflows, and comparisons for modern
@@ -68,7 +74,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright 2026 Stack Signal</p>
+          <p>Copyright 2026 Sinale</p>
           <p>Independent AI tool guidance for builders.</p>
         </div>
       </div>
