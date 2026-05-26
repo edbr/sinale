@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react"
 
 import { ArticleCta } from "@/components/article/article-cta"
 import { GiscusComments } from "@/components/article/giscus-comments"
+import { RelatedContent } from "@/components/article/related-content"
 import { Button } from "@/components/ui/button"
 import type { CardItem } from "@/lib/site-content"
 import { toolLinks } from "@/lib/tool-links"
@@ -41,6 +42,11 @@ export async function ArticlePage({
   if (!item) {
     notFound()
   }
+
+  const currentIndex = items.findIndex((entry) => entry.href === item.href)
+  const relatedItems = [...items.slice(currentIndex + 1), ...items]
+    .filter((entry) => entry.href !== item.href)
+    .slice(0, 3)
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -81,6 +87,11 @@ export async function ArticlePage({
             <ArticleCta tool={cta.tool} href={cta.href} placement="bottom" />
           </>
         ) : null}
+
+        <RelatedContent
+          title={`More ${parentLabel.toLowerCase()}`}
+          items={relatedItems}
+        />
 
         <GiscusComments />
       </article>

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import {  Inter, Manrope, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { InternalLinkGrid } from "@/components/site/internal-link-grid";
 import { NewsletterCta } from "@/components/site/newsletter-cta";
+import { NextRelatedContent } from "@/components/site/next-related-content";
+import { WebMcpTools } from "@/components/site/webmcp-tools";
 import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -41,8 +44,11 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <WebMcpTools />
         <SiteHeader />
         <div className="flex-1">{children}</div>
+        <NextRelatedContent />
+        <InternalLinkGrid />
         <NewsletterCta />
         <SiteFooter />
       </body>

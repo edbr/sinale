@@ -7,6 +7,7 @@ const footerGroups = [
   {
     title: "Content",
     links: [
+      { label: "Articles", href: "/articles" },
       { label: "Comparisons", href: "/comparisons" },
       { label: "Reviews", href: "/reviews" },
       { label: "Best Of", href: "/best" },

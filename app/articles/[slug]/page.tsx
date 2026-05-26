@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, Check } from "lucide-react"
 
 import { GiscusComments } from "@/components/article/giscus-comments"
+import { RelatedContent } from "@/components/article/related-content"
 import { Button } from "@/components/ui/button"
 import { articles, getArticle } from "@/lib/articles"
 import { pageMetadata } from "@/lib/seo"
@@ -48,6 +49,26 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
   if (!article) {
     notFound()
   }
+
+  const relatedArticles = articles
+    .filter((entry) => entry.slug !== article.slug)
+    .sort((a, b) => {
+      if (a.category === article.category && b.category !== article.category) {
+        return -1
+      }
+
+      if (a.category !== article.category && b.category === article.category) {
+        return 1
+      }
+
+      return 0
+    })
+    .slice(0, 3)
+    .map((entry) => ({
+      title: entry.title,
+      description: entry.description,
+      href: `/articles/${entry.slug}`,
+    }))
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -122,6 +143,8 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
             should not remove taste, judgment, or accountability.
           </p>
         </section>
+
+        <RelatedContent items={relatedArticles} />
 
         <GiscusComments />
       </article>
