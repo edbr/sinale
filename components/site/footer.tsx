@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { Button } from "@/components/ui/button"
+
 const footerGroups = [
   {
     title: "Content",
@@ -61,6 +63,11 @@ export function SiteFooter() {
             Practical AI tool reviews, workflows, and comparisons for modern
             tech teams.
           </p>
+          <Button asChild size="sm" className="mt-5 rounded-full">
+            <Link href="https://sinale.beehiiv.com/subscribe">
+              Subscribe
+            </Link>
+          </Button>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

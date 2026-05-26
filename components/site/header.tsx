@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Search } from "lucide-react"
+import { Mail, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -49,12 +49,25 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Button asChild variant="outline" size="sm" className="rounded-full">
-          <Link href="/search">
-            <Search />
-            Search
-          </Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            asChild
+            variant="outline"
+            size="sm"
+            className="hidden rounded-full sm:inline-flex"
+          >
+            <Link href="/search">
+              <Search />
+              Search
+            </Link>
+          </Button>
+          <Button asChild size="sm" className="rounded-full">
+            <Link href="https://sinale.beehiiv.com/subscribe">
+              <Mail />
+              Subscribe
+            </Link>
+          </Button>
+        </div>
       </div>
 
       <div className="border-t md:hidden">

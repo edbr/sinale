@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {  Inter, Manrope, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { NewsletterCta } from "@/components/site/newsletter-cta";
 import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <div className="flex-1">{children}</div>
+        <NewsletterCta />
         <SiteFooter />
       </body>
     </html>
