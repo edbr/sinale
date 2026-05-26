@@ -3,7 +3,7 @@ import { ArrowRight, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { pageMetadata } from "@/lib/seo"
-import { aiToolCategories } from "@/lib/site-content"
+import { aiToolCategories, slugifyToolName } from "@/lib/site-content"
 
 export const metadata = pageMetadata({
   title: "AI Tool Directory | Sinale",
@@ -93,7 +93,7 @@ export default function ToolsPage() {
                 {category.tools.map((tool) => (
                   <Link
                     key={tool}
-                    href={`/search?q=${encodeURIComponent(tool)}`}
+                    href={`/tools/${slugifyToolName(tool)}`}
                     className="rounded-full border bg-background px-3 py-1.5 text-sm transition hover:border-foreground hover:text-foreground"
                   >
                     {tool}

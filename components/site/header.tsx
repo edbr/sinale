@@ -5,6 +5,7 @@ import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const primaryNav = [
+  { label: "Articles", href: "/articles" },
   { label: "Comparisons", href: "/comparisons" },
   { label: "Reviews", href: "/reviews" },
   { label: "Best Of", href: "/best" },

@@ -1,6 +1,10 @@
 import { ArticlePage } from "@/app/article-page"
 import { pageMetadata } from "@/lib/seo"
-import { trendingTools } from "@/lib/site-content"
+import { getToolBySlug, toolDirectory } from "@/lib/site-content"
+
+export function generateStaticParams() {
+  return toolDirectory.map((tool) => ({ slug: tool.slug }))
+}
 
 export async function generateMetadata({
   params,
@@ -8,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const item = trendingTools.find((entry) => entry.href.endsWith(`/${slug}`))
+  const item = getToolBySlug(slug)
 
   return pageMetadata({
     title: item ? `${item.name} | Sinale` : "AI Tool | Sinale",
@@ -26,8 +30,8 @@ export default function ToolPage({
 }) {
   return (
     <ArticlePage
-      items={trendingTools.map((tool) => ({
-        title: tool.name,
+      items={toolDirectory.map((tool) => ({
+        title: tool.title,
         description: tool.description,
         href: tool.href,
       }))}

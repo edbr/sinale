@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 
 import { ArticleCta } from "@/components/article/article-cta"
+import { GiscusComments } from "@/components/article/giscus-comments"
 import { Button } from "@/components/ui/button"
 import type { CardItem } from "@/lib/site-content"
 import { toolLinks } from "@/lib/tool-links"
@@ -80,6 +81,8 @@ export async function ArticlePage({
             <ArticleCta tool={cta.tool} href={cta.href} placement="bottom" />
           </>
         ) : null}
+
+        <GiscusComments />
       </article>
     </main>
   )

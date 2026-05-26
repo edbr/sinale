@@ -16,6 +16,27 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Comments
+
+Article comments use [giscus](https://giscus.app/) and render when these environment variables are configured:
+
+```bash
+NEXT_PUBLIC_GISCUS_ata-repo="edbr/sinale"
+NEXT_PUBLIC_GISCUS_data-repo-id="R_kgDOSlGMQA"
+NEXT_PUBLIC_GISCUS_data-category="General"
+NEXT_PUBLIC_GISCUS_data-category-id="DIC_kwDOSlGMQM4C91xO"
+NEXT_PUBLIC_GISCUS_data-mapping="pathname"
+NEXT_PUBLIC_GISCUS_data-strict="0"
+NEXT_PUBLIC_GISCUS_data-reactions-enabled="1"
+NEXT_PUBLIC_GISCUS_data-emit-metadata="0"
+NEXT_PUBLIC_GISCUS_data-input-position="bottom"
+NEXT_PUBLIC_GISCUS_data-theme="noborder_light"
+NEXT_PUBLIC_GISCUS_data-lang="en"
+NEXT_PUBLIC_GISCUS_crossorigin="anonymous"
+```
+
+Optional settings include `NEXT_PUBLIC_GISCUS_MAPPING`, `NEXT_PUBLIC_GISCUS_THEME`, `NEXT_PUBLIC_GISCUS_LANG`, `NEXT_PUBLIC_GISCUS_REACTIONS_ENABLED`, `NEXT_PUBLIC_GISCUS_INPUT_POSITION`, and `NEXT_PUBLIC_GISCUS_LOADING`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

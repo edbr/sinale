@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, Check, X } from "lucide-react"
 
 import { ArticleCta } from "@/components/article/article-cta"
+import { GiscusComments } from "@/components/article/giscus-comments"
 import { Button } from "@/components/ui/button"
 import { toolLinks } from "@/lib/tool-links"
 
@@ -270,6 +271,8 @@ export function CursorReview() {
 
 
         <ArticleCta tool="Cursor" href={toolLinks.cursor} placement="bottom" />
+
+        <GiscusComments />
       </article>
     </main>
   )
