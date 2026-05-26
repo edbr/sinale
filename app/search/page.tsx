@@ -27,6 +27,8 @@ export const metadata = pageMetadata({
   index: false,
 })
 
+metadata.robots = "noindex,follow"
+
 type SearchItem = CardItem & {
   type: string
   keywords?: string[]
