@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight, Search } from "lucide-react"
 
 import { ToolLogo } from "@/components/site/tool-logo"
+import { RoleCarousel } from "@/components/site/role-carousel"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import {
@@ -250,7 +251,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {comparisons.map((comparison) => {
+          {comparisons.slice(0, 6).map((comparison) => {
             const logos = getComparisonTools(comparison.title)
 
             return (
@@ -301,32 +302,13 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((pillar) => (
-            <Link
-              key={pillar.title}
-              href={pillar.href}
-              className="group rounded-lg border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div
-                className={cn(
-                  "mb-5 flex size-10 items-center justify-center rounded-lg",
-                  getPillarTone(pillar.title)
-                )}
-              >
-                <pillar.icon className="size-5" />
-              </div>
-              <h3 className="text-xl font-semibold">{pillar.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                {pillar.description}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium">
-                Explore
-                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-              </span>
-            </Link>
-          ))}
-        </div>
+        <RoleCarousel
+          pillars={pillars.map(({ title, description, href }) => ({
+            title,
+            description,
+            href,
+          }))}
+        />
       </section>
 
       <section className="border-t bg-secondary/40">
@@ -349,7 +331,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-4 lg:grid-cols-5">
-            {workflows.map((workflow, index) => (
+            {workflows.slice(0, 5).map((workflow, index) => (
               <Link
                 key={workflow.title}
                 href={workflow.href}
