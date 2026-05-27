@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, ArrowRight, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { ToolLogo } from "@/components/site/tool-logo"
 import { articles } from "@/lib/articles"
 import { pageMetadata } from "@/lib/seo"
 import {
@@ -62,6 +63,8 @@ const contentIndex: SearchItem[] = [
     href: tool.href,
     type: tool.category,
     keywords: [tool.category],
+    domain: tool.domain,
+    logo: tool.logo,
   })),
   ...aiToolCategories.map((category) => ({
     title: category.title,
@@ -190,7 +193,14 @@ export default async function SearchPage({
                   </span>
                   <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold">{result.title}</h3>
+                <div className="flex items-center gap-3">
+                  <ToolLogo
+                    name={result.title}
+                    domain={result.domain}
+                    logo={result.logo}
+                  />
+                  <h3 className="text-lg font-semibold">{result.title}</h3>
+                </div>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {result.description}
                 </p>

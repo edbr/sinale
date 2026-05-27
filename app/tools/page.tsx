@@ -3,7 +3,12 @@ import { ArrowRight, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { pageMetadata } from "@/lib/seo"
-import { aiToolCategories, slugifyToolName } from "@/lib/site-content"
+import { ToolLogo } from "@/components/site/tool-logo"
+import {
+  aiToolCategories,
+  slugifyToolName,
+  toolDirectory,
+} from "@/lib/site-content"
 
 export const metadata = pageMetadata({
   title: "AI Tool Directory | Sinale",
@@ -22,6 +27,7 @@ const featuredJobs = [
 ]
 
 export default function ToolsPage() {
+  const toolsByName = new Map(toolDirectory.map((tool) => [tool.name, tool]))
   const toolCount = aiToolCategories.reduce(
     (total, category) => total + category.tools.length,
     0
@@ -94,8 +100,14 @@ export default function ToolsPage() {
                   <Link
                     key={tool}
                     href={`/tools/${slugifyToolName(tool)}`}
-                    className="rounded-full border bg-background px-3 py-1.5 text-sm transition hover:border-foreground hover:text-foreground"
+                    className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 text-sm transition hover:border-foreground hover:text-foreground"
                   >
+                    <ToolLogo
+                      name={tool}
+                      domain={toolsByName.get(tool)?.domain}
+                      logo={toolsByName.get(tool)?.logo}
+                      className="size-5 rounded-sm border-0 p-0.5"
+                    />
                     {tool}
                   </Link>
                 ))}

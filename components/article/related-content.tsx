@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+import { ToolLogo } from "@/components/site/tool-logo"
 import type { CardItem } from "@/lib/site-content"
 
 type RelatedContentProps = {
@@ -27,8 +28,15 @@ export function RelatedContent({
             className="group rounded-lg border bg-card p-4 transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="font-semibold leading-6">{item.title}</h3>
+              <div className="min-w-0">
+                <div className="flex items-center gap-3">
+                  <ToolLogo
+                    name={item.title}
+                    domain={item.domain}
+                    logo={item.logo}
+                  />
+                  <h3 className="font-semibold leading-6">{item.title}</h3>
+                </div>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.description}
                 </p>

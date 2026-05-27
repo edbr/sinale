@@ -9,10 +9,14 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
+import { getLogoDevUrl, getToolDomain } from "@/lib/tool-logos"
+
 export type CardItem = {
   title: string
   description: string
   href: string
+  domain?: string
+  logo?: string
 }
 
 export type RoleItem = CardItem & {
@@ -1781,6 +1785,8 @@ export type ToolDirectoryItem = CardItem & {
   name: string
   category: string
   slug: string
+  domain: string
+  logo: string
 }
 
 export function slugifyToolName(name: string) {
@@ -1796,6 +1802,7 @@ export const toolDirectory: ToolDirectoryItem[] = Array.from(
     aiToolCategories.flatMap((category) =>
       category.tools.map((name) => {
         const slug = slugifyToolName(name)
+        const domain = getToolDomain(name)
 
         return [
           slug,
@@ -1806,6 +1813,8 @@ export const toolDirectory: ToolDirectoryItem[] = Array.from(
             slug,
             description: `${name} is listed in Sinale's ${category.title.toLowerCase()} directory for ${category.description.toLowerCase()}`,
             href: `/tools/${slug}`,
+            domain,
+            logo: getLogoDevUrl(domain),
           },
         ] as const
       }),

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Search } from "lucide-react"
 
+import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import {
   comparisons,
@@ -267,15 +268,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2">
-            {trendingTools.map((tool, index) => (
+            {trendingTools.map((tool) => (
               <Link
                 key={tool.name}
                 href={tool.href}
                 className="group flex items-start gap-4 rounded-lg border bg-card p-4 transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-secondary text-sm font-semibold text-secondary-foreground">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                <ToolLogo name={tool.name} className="size-11 rounded-lg" />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <div>

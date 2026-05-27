@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import { ArticleCta } from "@/components/article/article-cta"
 import { GiscusComments } from "@/components/article/giscus-comments"
 import { RelatedContent } from "@/components/article/related-content"
+import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import type { CardItem } from "@/lib/site-content"
 import { toolLinks } from "@/lib/tool-links"
@@ -61,6 +62,14 @@ export async function ArticlePage({
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           {parentLabel}
         </p>
+        {item.domain || item.logo ? (
+          <ToolLogo
+            name={item.title}
+            domain={item.domain}
+            logo={item.logo}
+            className="mb-5 size-12 rounded-lg"
+          />
+        ) : null}
         <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
           {item.title}
         </h1>

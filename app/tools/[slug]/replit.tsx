@@ -4,6 +4,7 @@ import { ArrowLeft, Check } from "lucide-react"
 import { ArticleCta } from "@/components/article/article-cta"
 import { GiscusComments } from "@/components/article/giscus-comments"
 import { RelatedContent } from "@/components/article/related-content"
+import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import { toolLinks } from "@/lib/tool-links"
 import type { CardItem } from "@/lib/site-content"
@@ -76,6 +77,7 @@ export function ReplitToolPage({ relatedItems }: { relatedItems: CardItem[] }) {
         </Button>
 
         <p className="mb-4 text-sm font-medium text-muted-foreground">Tools</p>
+        <ToolLogo name="Replit" className="mb-5 size-12 rounded-lg" />
         <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
           Replit
         </h1>
