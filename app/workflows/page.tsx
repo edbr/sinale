@@ -16,6 +16,7 @@ export default function WorkflowsPage() {
       title="AI workflows for real product work."
       description="Practical stacks for design, coding, research, analytics, and startup execution."
       items={workflows}
+      cardVisual="workflow-icons"
     />
   )
 }

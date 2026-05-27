@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
+import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import { articles } from "@/lib/articles"
 import { pageMetadata } from "@/lib/seo"
@@ -11,6 +12,10 @@ export const metadata = pageMetadata({
     "Practical AI workflow articles for founders, developers, designers, product teams, operators, and analysts.",
   path: "/articles",
 })
+
+function getArticleLogoTool(tool: string) {
+  return tool.split(/\s+(?:and|or)\s+|,/)[0]?.trim() ?? tool
+}
 
 export default function ArticlesPage() {
   return (
@@ -47,7 +52,13 @@ export default function ArticlesPage() {
                 </span>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
               </div>
-              <h2 className="text-lg font-semibold">{article.title}</h2>
+              <div className="flex items-start gap-3">
+                <ToolLogo
+                  name={getArticleLogoTool(article.tool)}
+                  className="mt-0.5 size-9 rounded-lg"
+                />
+                <h2 className="text-lg font-semibold">{article.title}</h2>
+              </div>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 {article.description}
               </p>
