@@ -3,6 +3,7 @@ import { ArrowRight, Search } from "lucide-react"
 
 import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import {
   comparisons,
   pillars,
@@ -11,6 +12,120 @@ import {
   workflows,
 } from "@/lib/site-content"
 import { pageMetadata } from "@/lib/seo"
+
+function getComparisonTools(title: string) {
+  const match = title.match(/^(.*?)\s+vs\s+(.*?)(?:\s+\(|:|$)/i)
+  if (!match) {
+    return []
+  }
+
+  return [match[1].trim(), match[2].trim()]
+}
+
+function getPillarColor(title: string) {
+  switch (title) {
+    case "AI for Designers":
+      return "bg-fuchsia-500 text-white"
+    case "AI for Developers":
+      return "bg-sky-500 text-white"
+    case "AI for Product Managers":
+      return "bg-orange-500 text-white"
+    case "AI for Data & Analytics":
+      return "bg-emerald-500 text-white"
+    case "AI for Founders":
+      return "bg-amber-500 text-white"
+    default:
+      return "bg-secondary text-secondary-foreground"
+  }
+}
+
+function getPillarTone(title: string) {
+  switch (title) {
+    case "AI for Designers":
+      return "bg-fuchsia-100 text-fuchsia-700"
+    case "AI for Developers":
+      return "bg-sky-100 text-sky-700"
+    case "AI for Product Managers":
+      return "bg-orange-100 text-orange-700"
+    case "AI for Data & Analytics":
+      return "bg-emerald-100 text-emerald-700"
+    case "AI for Founders":
+      return "bg-amber-100 text-amber-700"
+    default:
+      return "bg-secondary text-secondary-foreground"
+  }
+}
+
+function getWorkflowTagTone(tag: string) {
+  switch (tag) {
+    case "Founders":
+      return "bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200"
+    case "MVP":
+      return "bg-slate-100 text-slate-700 border-slate-200"
+    case "Design":
+      return "bg-violet-100 text-violet-700 border-violet-200"
+    case "Product":
+      return "bg-orange-100 text-orange-700 border-orange-200"
+    case "Development":
+      return "bg-sky-100 text-sky-700 border-sky-200"
+    case "Agents":
+      return "bg-cyan-100 text-cyan-700 border-cyan-200"
+    case "Research":
+      return "bg-emerald-100 text-emerald-700 border-emerald-200"
+    case "Strategy":
+      return "bg-amber-100 text-amber-700 border-amber-200"
+    case "PM":
+      return "bg-rose-100 text-rose-700 border-rose-200"
+    case "Content":
+      return "bg-indigo-100 text-indigo-700 border-indigo-200"
+    case "Support":
+      return "bg-lime-100 text-lime-700 border-lime-200"
+    case "Engineering":
+      return "bg-slate-100 text-slate-700 border-slate-200"
+    case "Quality":
+      return "bg-emerald-100 text-emerald-700 border-emerald-200"
+    case "Docs":
+      return "bg-amber-100 text-amber-700 border-amber-200"
+    case "Marketing":
+      return "bg-pink-100 text-pink-700 border-pink-200"
+    case "SEO":
+      return "bg-cyan-100 text-cyan-700 border-cyan-200"
+    case "Growth":
+      return "bg-emerald-100 text-emerald-700 border-emerald-200"
+    case "Sales":
+      return "bg-rose-100 text-rose-700 border-rose-200"
+    case "Outbound":
+      return "bg-orange-100 text-orange-700 border-orange-200"
+    case "Meetings":
+      return "bg-violet-100 text-violet-700 border-violet-200"
+    case "Operations":
+      return "bg-slate-100 text-slate-700 border-slate-200"
+    case "Lifecycle":
+      return "bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200"
+    case "Hiring":
+      return "bg-amber-100 text-amber-700 border-amber-200"
+    case "People":
+      return "bg-lime-100 text-lime-700 border-lime-200"
+    case "Automation":
+      return "bg-sky-100 text-sky-700 border-sky-200"
+    case "No-Code":
+      return "bg-cyan-100 text-cyan-700 border-cyan-200"
+    case "Security":
+      return "bg-rose-100 text-rose-700 border-rose-200"
+    case "Fundraising":
+      return "bg-violet-100 text-violet-700 border-violet-200"
+    case "Analytics":
+      return "bg-sky-100 text-sky-700 border-sky-200"
+    case "Reporting":
+      return "bg-emerald-100 text-emerald-700 border-emerald-200"
+    case "Data":
+      return "bg-cyan-100 text-cyan-700 border-cyan-200"
+    case "SQL":
+      return "bg-indigo-100 text-indigo-700 border-indigo-200"
+    default:
+      return "bg-slate-100 text-slate-700 border-slate-200"
+  }
+}
 
 export const metadata = pageMetadata({
   title: "Sinale | AI Tools, SaaS Software, and Founder Resources",
@@ -92,7 +207,10 @@ export default function HomePage() {
                 className="flex items-center justify-between rounded-lg border bg-background p-3 transition hover:-translate-y-0.5 hover:bg-card hover:shadow-md"
               >
                 <div className="flex items-center gap-3 ">
-                  <div className="flex size-9 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <div className={cn(
+                    "flex size-9 items-center justify-center rounded-lg",
+                    getPillarColor(pillar.title)
+                  )}>
                     <pillar.icon className="size-4" />
                   </div>
                   <div>
@@ -132,24 +250,43 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {comparisons.map((comparison) => (
-            <Link
-              key={comparison.title}
-              href={comparison.href}
-              className="group rounded-lg border bg-card p-5 transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <span className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground">
-                  Comparison
-                </span>
-                <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
-              </div>
-              <h3 className="text-lg font-semibold">{comparison.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                {comparison.description}
-              </p>
-            </Link>
-          ))}
+          {comparisons.map((comparison) => {
+            const logos = getComparisonTools(comparison.title)
+
+            return (
+              <Link
+                key={comparison.title}
+                href={comparison.href}
+                className="group rounded-lg border bg-card p-5 transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground">
+                    Comparison
+                  </span>
+                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                </div>
+
+                <div className="mb-4 flex items-center gap-2">
+                  {logos.length === 2 ? (
+                    <>
+                      <ToolLogo name={logos[0]} className="size-9 rounded-lg" />
+                      <span className="text-sm font-medium uppercase tracking-[0.24em] text-muted-foreground">
+                        x
+                      </span>
+                      <ToolLogo name={logos[1]} className="size-9 rounded-lg" />
+                    </>
+                  ) : (
+                    <ToolLogo name={comparison.title} className="size-9 rounded-lg" />
+                  )}
+                </div>
+
+                <h3 className="text-lg font-semibold">{comparison.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {comparison.description}
+                </p>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
@@ -171,7 +308,12 @@ export default function HomePage() {
               href={pillar.href}
               className="group rounded-lg border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="mb-5 flex size-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+              <div
+                className={cn(
+                  "mb-5 flex size-10 items-center justify-center rounded-lg",
+                  getPillarTone(pillar.title)
+                )}
+              >
                 <pillar.icon className="size-5" />
               </div>
               <h3 className="text-xl font-semibold">{pillar.title}</h3>
@@ -232,7 +374,10 @@ export default function HomePage() {
                   {workflow.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground"
+                      className={cn(
+                        "rounded-full border px-2.5 py-1 text-xs font-semibold",
+                        getWorkflowTagTone(tag)
+                      )}
                     >
                       {tag}
                     </span>
