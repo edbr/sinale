@@ -3,6 +3,7 @@ import { pageMetadata } from "@/lib/seo"
 import { workflows } from "@/lib/site-content"
 import { AiCodingStackWorkflow } from "./ai-coding-stack"
 import { AiProductDesignWorkflow } from "./ai-product-design"
+import { AiProductRoadmapReviewWorkflow } from "./ai-product-roadmap-review"
 import { AiResearchStackWorkflow } from "./ai-research-stack"
 import { AiUserPersonaBuilderWorkflow } from "./ai-user-persona-builder"
 import { BuildingSaasMvpWithAiWorkflow } from "./building-saas-mvp-with-ai"
@@ -42,6 +43,10 @@ export default async function WorkflowPage({
 
   if (slug === "ai-product-design") {
     return <AiProductDesignWorkflow />
+  }
+
+  if (slug === "ai-product-roadmap-review") {
+    return <AiProductRoadmapReviewWorkflow />
   }
 
   if (slug === "ai-research-stack") {
