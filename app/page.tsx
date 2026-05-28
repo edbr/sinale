@@ -293,11 +293,11 @@ export default function HomePage() {
       </section>
 
             <section className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="relative overflow-hidden rounded-[2rem] border border-fuchsia-200/60 bg-linear-to-r from-fuchsia-50 via-slate-50 to-cyan-50 p-8 shadow-[0_24px_80px_rgba(124,58,237,0.08)]">
+        <div className="relative overflow-hidden rounded-[2rem] border border-gray-200/60 bg-linear-to-r from-blue-50 via-slate-50 to-cyan-50 p-8 shadow-[0_24px_80px_rgba(124,58,237,0.08)]">
           <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-72 rounded-bl-[4rem] bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_35%)] lg:block" />
           <div className="relative grid gap-8 lg:grid-cols-[1.8fr_1fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
                 Latest review
               </p>
               <h2 className="mt-4 text-4xl font-heading font-extrabold tracking-[-0.04em] text-slate-950">
@@ -308,10 +308,10 @@ export default function HomePage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="rounded-full bg-fuchsia-700 px-6 text-white hover:bg-fuchsia-800">
+                <Button asChild size="lg" className="rounded-full bg-cyan-600 px-6 text-white hover:bg-fuchsia-800">
                   <Link href={reviews[0].href}>Read the latest review</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-fuchsia-200 px-6 text-fuchsia-700 hover:border-fuchsia-300 hover:text-fuchsia-900">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-gray-200 px-6 text-blue-500 hover:border-orange-300 hover:text-yellow-600">
                   <Link href="/reviews">Browse all reviews</Link>
                 </Button>
               </div>
