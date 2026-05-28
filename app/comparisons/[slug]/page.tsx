@@ -3,28 +3,38 @@ import { pageMetadata } from "@/lib/seo"
 import { comparisons } from "@/lib/site-content"
 import { ApolloVsZoomInfoComparison } from "./apollo-vs-zoominfo"
 import { BoltVsReplitComparison } from "./bolt-vs-replit"
+import { CanvaVsAdobeExpressComparison } from "./canva-vs-adobe-express"
 import { ClaudeCodeVsGithubCopilotComparison } from "./claude-code-vs-github-copilot"
 import { ClaudeVsChatGPTComparison } from "./claude-vs-chatgpt"
 import { ClaudeVsGeminiComparison } from "./claude-vs-gemini"
 import { CursorVsClaudeCodeComparison } from "./cursor-vs-claude-code"
 import { CursorVsGithubCopilotComparison } from "./cursor-vs-github-copilot"
 import { CursorVsWindsurfComparison } from "./cursor-vs-windsurf"
+import { DescriptVsRiversideComparison } from "./descript-vs-riverside"
 import { FathomVsFirefliesComparison } from "./fathom-vs-fireflies"
+import { FigmaAiVsGalileoAiComparison } from "./figma-ai-vs-galileo-ai"
+import { FramerVsSquarespaceComparison } from "./framer-vs-squarespace"
 import { GranolaVsFathomComparison } from "./granola-vs-fathom"
 import { GranolaVsOtterComparison } from "./granola-vs-otter"
+import { LinearVsJiraComparison } from "./linear-vs-jira"
 import { LovableVsBoltComparison } from "./lovable-vs-bolt"
+import { MidjourneyVsDallEComparison } from "./midjourney-vs-dall-e"
 import { NotionAiVsCodaAiComparison } from "./notion-ai-vs-coda-ai"
 import { OtterVsFirefliesComparison } from "./otter-vs-fireflies"
 import { NotionAiVsChatgptComparison } from "./notion-ai-vs-chatgpt"
+import { NotionVsLinearComparison } from "./notion-vs-linear"
 import { PerplexityVsGoogleSearchComparison } from "./perplexity-vs-google-search"
 import { PerplexityVsGeminiComparison } from "./perplexity-vs-gemini"
 import { PerplexityVsChatGPTComparison } from "./perplexity-vs-chatgpt"
 import { ReadAiVsFathomComparison } from "./read-ai-vs-fathom"
 import { ReplitVsLovableComparison } from "./replit-vs-lovable"
 import { RetoolVsBubbleComparison } from "./retool-vs-bubble"
+import { RunwayVsPikaComparison } from "./runway-vs-pika"
 import { SupabaseVsFirebaseComparison } from "./supabase-vs-firebase"
 import { WebflowVsFramerComparison } from "./webflow-vs-framer"
+import { WebflowVsWixStudioComparison } from "./webflow-vs-wix-studio"
 import { WindsurfVsCursorComparison } from "./windsurf-vs-cursor"
+import { ZapierVsN8nComparison } from "./zapier-vs-n8n"
 
 export async function generateMetadata({
   params,
@@ -106,6 +116,10 @@ export default async function ComparisonPage({
     return <NotionAiVsChatgptComparison />
   }
 
+  if (slug === "notion-vs-linear") {
+    return <NotionVsLinearComparison />
+  }
+
   if (slug === "granola-vs-fathom") {
     return <GranolaVsFathomComparison />
   }
@@ -144,6 +158,42 @@ export default async function ComparisonPage({
 
   if (slug === "supabase-vs-firebase") {
     return <SupabaseVsFirebaseComparison />
+  }
+
+  if (slug === "zapier-vs-n8n") {
+    return <ZapierVsN8nComparison />
+  }
+
+  if (slug === "descript-vs-riverside") {
+    return <DescriptVsRiversideComparison />
+  }
+
+  if (slug === "runway-vs-pika") {
+    return <RunwayVsPikaComparison />
+  }
+
+  if (slug === "midjourney-vs-dall-e") {
+    return <MidjourneyVsDallEComparison />
+  }
+
+  if (slug === "figma-ai-vs-galileo-ai") {
+    return <FigmaAiVsGalileoAiComparison />
+  }
+
+  if (slug === "canva-vs-adobe-express") {
+    return <CanvaVsAdobeExpressComparison />
+  }
+
+  if (slug === "framer-vs-squarespace") {
+    return <FramerVsSquarespaceComparison />
+  }
+
+  if (slug === "webflow-vs-wix-studio") {
+    return <WebflowVsWixStudioComparison />
+  }
+
+  if (slug === "linear-vs-jira") {
+    return <LinearVsJiraComparison />
   }
 
   return (

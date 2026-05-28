@@ -20,6 +20,7 @@ import { RegieToolPage } from "./regie"
 import { RelayToolPage } from "./relay"
 import { RelevanceAiToolPage } from "./relevance-ai"
 import { ReplitToolPage } from "./replit"
+import { WindsurfToolPage } from "./windsurf"
 
 export function generateStaticParams() {
   return toolDirectory.map((tool) => ({ slug: tool.slug }))
@@ -73,6 +74,8 @@ export async function generateMetadata({
           ? "Relevance AI | Sinale"
         : slug === "replit"
           ? "Replit | Sinale"
+        : slug === "windsurf"
+          ? "Windsurf | Sinale"
         : item
           ? `${item.name} | Sinale`
           : "AI Tool | Sinale",
@@ -115,6 +118,8 @@ export async function generateMetadata({
           ? "Relevance AI guide for AI workforce building, no-code agents, GTM automation, evaluations, and governance."
         : slug === "replit"
           ? "Replit guide for AI app building, browser-based coding, prototypes, deployments, and Replit Agent."
+        : slug === "windsurf"
+          ? "Windsurf guide for Cascade, agentic coding, AI IDE workflows, multi-file editing, MCP, app previews, pricing, and developer productivity."
         : (item?.description ??
           "Explore practical AI tool recommendations, workflows, reviews, and comparisons."),
     path: `/tools/${slug}`,
@@ -255,6 +260,12 @@ export default async function ToolPage({
     const relatedItems = getRelatedToolItems(slug)
 
     return <ReplitToolPage relatedItems={relatedItems} />
+  }
+
+  if (slug === "windsurf") {
+    const relatedItems = getRelatedToolItems(slug)
+
+    return <WindsurfToolPage relatedItems={relatedItems} />
   }
 
   return (

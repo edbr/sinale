@@ -2,10 +2,13 @@ import { ArticlePage } from "@/app/article-page"
 import { pageMetadata } from "@/lib/seo"
 import { reviews } from "@/lib/site-content"
 import { ChatGPTReview } from "./chatgpt-review"
+import { ClaudeOpus47Review } from "./claude-opus-4-7-review"
 import { ClaudeReview } from "./claude-review"
 import { CursorReview } from "./cursor-review"
+import { GitHubCopilotProReview } from "./github-copilot-pro-review"
 import { LovableReview } from "./lovable-review"
 import { PerplexityReview } from "./perplexity-review"
+import { WindsurfReview } from "./windsurf-review"
 
 export async function generateMetadata({
   params,
@@ -39,6 +42,18 @@ export default async function ReviewPage({
     return <ClaudeReview />
   }
 
+  if (slug === "claude-opus-4-7-review") {
+    return <ClaudeOpus47Review />
+  }
+
+  if (slug === "github-copilot-pro-review") {
+    return <GitHubCopilotProReview />
+  }
+
+  if (slug === "github-copilot-review") {
+    return <GitHubCopilotProReview />
+  }
+
   if (slug === "chatgpt-review") {
     return <ChatGPTReview />
   }
@@ -49,6 +64,10 @@ export default async function ReviewPage({
 
   if (slug === "lovable-review") {
     return <LovableReview />
+  }
+
+  if (slug === "windsurf-review") {
+    return <WindsurfReview />
   }
 
   return (

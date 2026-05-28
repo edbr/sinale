@@ -35,7 +35,18 @@ type SearchItem = CardItem & {
   keywords?: string[]
 }
 
-const contentIndex: SearchItem[] = [
+function uniqueByHref(items: SearchItem[]) {
+  const seen = new Set<string>()
+
+  return items.filter((item) => {
+    if (seen.has(item.href)) return false
+
+    seen.add(item.href)
+    return true
+  })
+}
+
+const contentIndex: SearchItem[] = uniqueByHref([
   ...articles.map((item) => ({
     title: item.title,
     description: item.description,
@@ -73,7 +84,7 @@ const contentIndex: SearchItem[] = [
     type: "Tool Category",
     keywords: category.tools,
   })),
-]
+])
 
 const fallbackResults = [
   ...bestOfGuides,

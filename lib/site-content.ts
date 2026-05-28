@@ -329,6 +329,20 @@ export const comparisons: CardItem[] = [
 
 export const reviews: CardItem[] = [
   {
+    title:
+      "Claude Opus 4.7 Review (2026): Anthropic's New Model for Hard Coding and Complex Work",
+    description:
+      "A practical review of Claude Opus 4.7 for agentic coding, complex reasoning, long-context analysis, and premium Claude workflows.",
+    href: "/reviews/claude-opus-4-7-review",
+  },
+  {
+    title:
+      "GitHub Copilot Pro Review (2026): Still the Easiest AI Coding Assistant to Recommend",
+    description:
+      "A practical review of Copilot Pro for autocomplete, chat, code review, GitHub workflows, model usage, and developer productivity.",
+    href: "/reviews/github-copilot-pro-review",
+  },
+  {
     title: "Cursor Review (2026): The Best AI Coding Assistant I've Used",
     description:
       "A hands-on look at Cursor for real-world coding, refactoring, debugging, and team adoption.",
@@ -374,7 +388,8 @@ export const reviews: CardItem[] = [
     href: "/reviews/claude-code-review",
   },
   {
-    title: "GitHub Copilot Review (2026): Still the Default AI Coding Assistant?",
+    title:
+      "GitHub Copilot Review (2026): Still the Default AI Coding Assistant?",
     description:
       "A practical look at Copilot for autocomplete, chat, enterprise adoption, IDE workflows, and developer productivity.",
     href: "/reviews/github-copilot-review",
