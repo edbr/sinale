@@ -1,9 +1,14 @@
 import { ArticlePage } from "@/app/article-page"
 import { pageMetadata } from "@/lib/seo"
 import { comparisons } from "@/lib/site-content"
+import { ApolloVsClayComparison } from "./apollo-vs-clay"
+import { AirtableVsNotionComparison } from "./airtable-vs-notion"
 import { ApolloVsZoomInfoComparison } from "./apollo-vs-zoominfo"
+import { AvomaVsGongComparison } from "./avoma-vs-gong"
 import { BoltVsReplitComparison } from "./bolt-vs-replit"
 import { CanvaVsAdobeExpressComparison } from "./canva-vs-adobe-express"
+import { ChatGPTVsGeminiComparison } from "./chatgpt-vs-gemini"
+import { ClayVsZoomInfoComparison } from "./clay-vs-zoominfo"
 import { ClaudeCodeVsGithubCopilotComparison } from "./claude-code-vs-github-copilot"
 import { ClaudeVsChatGPTComparison } from "./claude-vs-chatgpt"
 import { ClaudeVsGeminiComparison } from "./claude-vs-gemini"
@@ -16,6 +21,7 @@ import { FigmaAiVsGalileoAiComparison } from "./figma-ai-vs-galileo-ai"
 import { FramerVsSquarespaceComparison } from "./framer-vs-squarespace"
 import { GranolaVsFathomComparison } from "./granola-vs-fathom"
 import { GranolaVsOtterComparison } from "./granola-vs-otter"
+import { HubSpotVsSalesforceComparison } from "./hubspot-vs-salesforce"
 import { LinearVsJiraComparison } from "./linear-vs-jira"
 import { LovableVsBoltComparison } from "./lovable-vs-bolt"
 import { MidjourneyVsDallEComparison } from "./midjourney-vs-dall-e"
@@ -84,6 +90,10 @@ export default async function ComparisonPage({
     return <ClaudeVsGeminiComparison />
   }
 
+  if (slug === "chatgpt-vs-gemini") {
+    return <ChatGPTVsGeminiComparison />
+  }
+
   if (slug === "perplexity-vs-chatgpt") {
     return <PerplexityVsChatGPTComparison />
   }
@@ -146,6 +156,26 @@ export default async function ComparisonPage({
 
   if (slug === "apollo-vs-zoominfo") {
     return <ApolloVsZoomInfoComparison />
+  }
+
+  if (slug === "apollo-vs-clay") {
+    return <ApolloVsClayComparison />
+  }
+
+  if (slug === "clay-vs-zoominfo") {
+    return <ClayVsZoomInfoComparison />
+  }
+
+  if (slug === "avoma-vs-gong") {
+    return <AvomaVsGongComparison />
+  }
+
+  if (slug === "airtable-vs-notion") {
+    return <AirtableVsNotionComparison />
+  }
+
+  if (slug === "hubspot-vs-salesforce") {
+    return <HubSpotVsSalesforceComparison />
   }
 
   if (slug === "webflow-vs-framer") {

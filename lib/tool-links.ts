@@ -1,6 +1,8 @@
 export const toolLinks = {
+  airtable: "https://airtable.com/",
   apollo: "https://www.apollo.io/",
   artisan: "https://www.artisan.co/",
+  avoma: "https://www.avoma.com/",
   autogen: "https://microsoft.github.io/autogen/",
   adobeExpress: "https://www.adobe.com/express/",
   canva: "https://www.canva.com/",
@@ -22,6 +24,7 @@ export const toolLinks = {
   gumloop: "https://www.gumloop.com/",
   helpscout: "https://www.helpscout.com/",
   hirevue: "https://www.hirevue.com/",
+  hubspot: "https://www.hubspot.com/",
   langgraph: "https://docs.langchain.com/oss/python/langgraph/overview",
   lavender: "https://www.lavender.ai/",
   linear: "https://linear.app/",
@@ -46,6 +49,7 @@ export const toolLinks = {
   riverside: "https://riverside.com/",
   runway: "https://runwayml.com/",
   pika: "https://pika.art/",
+  salesforce: "https://www.salesforce.com/",
   bubble: "https://bubble.io/",
   captions: "https://www.captions.ai/",
   supabase: "https://supabase.com/",
@@ -55,4 +59,5 @@ export const toolLinks = {
   windsurf: "https://windsurf.com/",
   zapier: "https://zapier.com/",
   n8n: "https://n8n.io/",
+  zoomInfo: "https://www.zoominfo.com/",
 }

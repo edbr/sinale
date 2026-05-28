@@ -9,6 +9,7 @@ import { WebMcpTools } from "@/components/site/webmcp-tools";
 import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 import { GoogleAnalytics } from "@/components/google-analytics"
+import { MicrosoftClarity } from "@/components/microsoft-clarity"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
         <NewsletterCta />
         <SiteFooter />
         <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   );

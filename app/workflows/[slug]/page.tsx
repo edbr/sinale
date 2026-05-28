@@ -1,7 +1,12 @@
 import { ArticlePage } from "@/app/article-page"
 import { pageMetadata } from "@/lib/seo"
 import { workflows } from "@/lib/site-content"
+import { AiCodingStackWorkflow } from "./ai-coding-stack"
+import { AiProductDesignWorkflow } from "./ai-product-design"
+import { AiResearchStackWorkflow } from "./ai-research-stack"
+import { AiUserPersonaBuilderWorkflow } from "./ai-user-persona-builder"
 import { BuildingSaasMvpWithAiWorkflow } from "./building-saas-mvp-with-ai"
+import { CustomerInterviewSynthesisAiWorkflow } from "./customer-interview-synthesis-ai"
 
 export async function generateMetadata({
   params,
@@ -29,6 +34,26 @@ export default async function WorkflowPage({
 
   if (slug === "building-saas-mvp-with-ai") {
     return <BuildingSaasMvpWithAiWorkflow />
+  }
+
+  if (slug === "ai-coding-stack") {
+    return <AiCodingStackWorkflow />
+  }
+
+  if (slug === "ai-product-design") {
+    return <AiProductDesignWorkflow />
+  }
+
+  if (slug === "ai-research-stack") {
+    return <AiResearchStackWorkflow />
+  }
+
+  if (slug === "ai-user-persona-builder") {
+    return <AiUserPersonaBuilderWorkflow />
+  }
+
+  if (slug === "customer-interview-synthesis-ai") {
+    return <CustomerInterviewSynthesisAiWorkflow />
   }
 
   return (
