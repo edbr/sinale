@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Mail, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { ThemeSwitches } from "@/components/site/theme-switches"
 
 const primaryNav = [
   { label: "Articles", href: "/articles" },
@@ -23,9 +24,9 @@ const roleNav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-        <Link href="/" className="flex items-center gap-2 font-semibold">
+    <header className="sticky top-0 z-50 border-b border-orange-900/15 bg-background/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="flex items-center gap-2 font-heading text-sm font-black uppercase tracking-[0.18em]">
           <Image
             src="/logo.png"
             alt="Sinale logo"
@@ -42,7 +43,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+              className="px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground transition hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -50,18 +51,19 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeSwitches />
           <Button
             asChild
             variant="outline"
             size="sm"
-            className="hidden rounded-full sm:inline-flex"
+            className="hidden rounded-none border-orange-900/25 bg-transparent text-xs font-bold uppercase tracking-[0.14em] sm:inline-flex"
           >
             <Link href="/search">
               <Search />
               Search
             </Link>
           </Button>
-          <Button asChild size="sm" className="rounded-full">
+          <Button asChild size="sm" className="rounded-none bg-foreground text-xs font-bold uppercase tracking-[0.14em] text-background hover:bg-primary">
             <Link href="https://sinale.beehiiv.com/subscribe">
               <Mail />
               Subscribe
@@ -70,13 +72,13 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-t md:hidden">
+      <div className="border-t border-orange-900/15 md:hidden">
         <nav className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-6 py-2">
           {[...primaryNav, ...roleNav].map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="shrink-0 rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+              className="shrink-0 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground transition hover:text-foreground"
             >
               {item.label}
             </Link>

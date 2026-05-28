@@ -16,6 +16,7 @@ export default function ComparisonsPage() {
       title="Compare AI tools side by side."
       description="Practical breakdowns of competing tools, where each one fits, and which product or team workflow should choose which."
       items={comparisons}
+      styleVariant="poster"
     />
   )
 }

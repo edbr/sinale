@@ -28,6 +28,7 @@ import {
 import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import { pillars, type CardItem } from "@/lib/site-content"
+import { cn } from "@/lib/utils"
 
 type SectionPageProps = {
   title: string
@@ -36,6 +37,7 @@ type SectionPageProps = {
   eyebrow?: string
   showRoleBrowse?: boolean
   cardVisual?: "logos" | "workflow-icons"
+  styleVariant?: "default" | "poster"
 }
 
 type WorkflowIconConfig = {
@@ -172,6 +174,16 @@ function getCardLogoTool(item: CardItem) {
   return item.title
 }
 
+function getComparisonLogoTools(title: string) {
+  const match = title.match(/^(.*?)\s+vs\s+(.*?)(?:\s+\(|:|$)/i)
+
+  if (!match) {
+    return []
+  }
+
+  return [match[1].trim(), match[2].trim()]
+}
+
 function WorkflowIcon({ item }: { item: CardItem }) {
   const workflowSlug = item.href.split("/").at(-1) ?? ""
   const config = workflowIcons[workflowSlug] ?? {
@@ -196,61 +208,131 @@ export function SectionPage({
   eyebrow = "Stack Signal",
   showRoleBrowse = false,
   cardVisual = "logos",
+  styleVariant = "default",
 }: SectionPageProps) {
+  const isPoster = styleVariant === "poster"
   const roleItems = pillars.filter(
     (pillar) => !["Reviews", "Comparisons"].includes(pillar.title)
   )
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className={cn("min-h-screen bg-background text-foreground", isPoster && "hero-glow")}>
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-        <Button asChild variant="ghost" className="mb-10 px-0">
+        <Button
+          asChild
+          variant={isPoster ? "outline" : "ghost"}
+          className={cn(
+            "mb-10",
+            isPoster
+              ? "rounded-none border-2 border-foreground bg-transparent font-black uppercase tracking-[0.12em] hover:bg-accent"
+              : "px-0"
+          )}
+        >
           <Link href="/">
             <ArrowLeft />
             Home
           </Link>
         </Button>
 
-        <p className="mb-4 text-sm font-medium text-muted-foreground">
+        <p
+          className={cn(
+            "mb-4",
+            isPoster
+              ? "text-xs font-black uppercase tracking-[0.34em] text-primary"
+              : "text-sm font-medium text-muted-foreground"
+          )}
+        >
           {eyebrow}
         </p>
-        <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
+        <h1
+          className={cn(
+            "max-w-4xl",
+            isPoster
+              ? "font-heading text-6xl font-black uppercase leading-[0.86] tracking-normal md:text-8xl"
+              : "text-5xl font-semibold tracking-tight md:text-7xl"
+          )}
+        >
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+        <p className={cn("mt-6 max-w-2xl text-lg leading-8 text-muted-foreground", isPoster && "font-medium")}>
           {description}
         </p>
 
         {items.length > 0 ? (
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group rounded-lg border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="mb-5 flex items-start justify-between gap-4">
-                  {cardVisual === "workflow-icons" ? (
-                    <WorkflowIcon item={item} />
-                  ) : (
-                    <ToolLogo
-                      name={getCardLogoTool(item)}
-                      domain={item.domain}
-                      logo={item.logo}
-                      className="size-10 rounded-lg"
-                    />
+          <div
+            className={cn(
+              "mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3",
+              isPoster && "border-2 border-foreground bg-[#fff7d8] p-4 shadow-[12px_12px_0_rgba(51,33,22,0.16)]"
+            )}
+          >
+            {items.map((item) => {
+              const comparisonTools = getComparisonLogoTools(item.title)
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "group bg-card p-6 transition hover:-translate-y-1",
+                    isPoster
+                      ? "border-2 border-foreground shadow-[6px_6px_0_rgba(51,33,22,0.16)] hover:bg-background hover:shadow-[10px_10px_0_rgba(51,33,22,0.18)]"
+                      : "rounded-lg border hover:shadow-lg"
                   )}
-                  <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
-                </div>
-                <h2 className="text-xl font-semibold">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium">
-                  Read more
-                </span>
-              </Link>
-            ))}
+                >
+                  <div className="mb-5 flex items-start justify-between gap-4">
+                    {cardVisual === "workflow-icons" ? (
+                      <WorkflowIcon item={item} />
+                    ) : comparisonTools.length === 2 && isPoster ? (
+                      <div className="flex items-center gap-2">
+                        <ToolLogo
+                          name={comparisonTools[0]}
+                          domain={item.domain}
+                          logo={item.logo}
+                          className="size-10 border border-foreground"
+                        />
+                        <span className="text-xs font-black uppercase tracking-[0.24em] text-primary">
+                          vs
+                        </span>
+                        <ToolLogo
+                          name={comparisonTools[1]}
+                          className="size-10 border border-foreground"
+                        />
+                      </div>
+                    ) : (
+                      <ToolLogo
+                        name={getCardLogoTool(item)}
+                        domain={item.domain}
+                        logo={item.logo}
+                        className={cn("size-10", isPoster ? "border border-foreground" : "rounded-lg")}
+                      />
+                    )}
+                    <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                  </div>
+                  <h2
+                    className={cn(
+                      isPoster
+                        ? "font-heading text-xl font-black uppercase leading-6"
+                        : "text-xl font-semibold"
+                    )}
+                  >
+                    {item.title}
+                  </h2>
+                  <p className={cn("mt-3 text-sm leading-6 text-muted-foreground", isPoster && "font-medium")}>
+                    {item.description}
+                  </p>
+                  <span
+                    className={cn(
+                      "mt-6 inline-flex items-center gap-1",
+                      isPoster
+                        ? "text-xs font-black uppercase tracking-[0.16em] text-primary"
+                        : "text-sm font-medium"
+                    )}
+                  >
+                    Read more
+                  </span>
+                </Link>
+              )
+            })}
           </div>
         ) : null}
 

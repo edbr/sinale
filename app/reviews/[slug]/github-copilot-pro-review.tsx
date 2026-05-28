@@ -52,32 +52,36 @@ const cons = [
 export function GitHubCopilotProReview() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <Button asChild variant="ghost" className="mb-10 px-0">
+      <article className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+        <Button
+          asChild
+          variant="outline"
+          className="mb-10 rounded-none border-orange-900/20 bg-transparent font-semibold hover:bg-accent"
+        >
           <Link href="/reviews">
             <ArrowLeft />
             Reviews
           </Link>
         </Button>
 
-        <p className="mb-4 text-sm font-medium text-muted-foreground">
+        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
           Review
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
           GitHub Copilot Pro Review (2026): Still the Easiest AI Coding
           Assistant to Recommend
         </h1>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          <span className="rounded-full border px-3 py-1 text-sm text-muted-foreground">
-            Rating: 8.5/10
+        <div className="mt-6 flex flex-wrap gap-3">
+          <span className="border border-orange-900/20 bg-[#fff7d8] px-3 py-1.5 text-sm font-semibold">
+            8.5/10 rating
           </span>
-          <span className="rounded-full border px-3 py-1 text-sm text-muted-foreground">
+          <span className="border border-orange-900/20 bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground">
             Best for GitHub-first developers
           </span>
         </div>
 
-        <div className="mt-8 space-y-5 text-lg leading-8 text-muted-foreground">
+        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted-foreground">
           <p>
             GitHub Copilot Pro is no longer the only serious AI coding
             assistant, but it remains one of the easiest to recommend. It is
@@ -96,12 +100,6 @@ export function GitHubCopilotProReview() {
             current IDE, Copilot Pro is still a strong default.
           </p>
         </div>
-
-        <ArticleCta
-          tool="GitHub Copilot"
-          href={toolLinks.githubCopilot}
-          placement="top"
-        />
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold">
@@ -129,13 +127,13 @@ export function GitHubCopilotProReview() {
           </h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {useCases.map((useCase) => (
-              <div key={useCase} className="rounded-lg border bg-card p-4">
+              <div key={useCase} className="border border-orange-900/15 bg-card p-4">
                 <p className="text-sm font-medium">{useCase}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-lg border bg-secondary/40 p-5">
-            <p className="text-sm font-medium text-muted-foreground">
+          <div className="mt-6 border-l-4 border-primary bg-[#fff7d8] p-5">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
               Example prompt
             </p>
             <p className="mt-3 leading-7">
@@ -156,7 +154,7 @@ export function GitHubCopilotProReview() {
           </h2>
           <div className="mt-5 grid gap-4">
             {strengths.map((strength) => (
-              <div key={strength.title} className="rounded-lg border bg-card p-5">
+              <div key={strength.title} className="border border-orange-900/15 bg-card p-5">
                 <h3 className="font-semibold">{strength.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {strength.body}
@@ -197,14 +195,14 @@ export function GitHubCopilotProReview() {
             Copilot Pro vs Cursor
           </h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="rounded-lg border bg-card p-5">
+            <div className="border border-orange-900/15 bg-card p-5">
               <h3 className="font-semibold">Choose Copilot Pro if</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 You want AI assistance inside your current IDE, you use GitHub
                 heavily, and you value low setup over an AI-native editor.
               </p>
             </div>
-            <div className="rounded-lg border bg-card p-5">
+            <div className="border border-orange-900/15 bg-card p-5">
               <h3 className="font-semibold">Choose Cursor if</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 You want deeper codebase-aware editing, stronger multi-file
@@ -235,14 +233,11 @@ export function GitHubCopilotProReview() {
           </p>
         </section>
 
-        <ArticleCta
-          tool="GitHub Copilot"
-          href={toolLinks.githubCopilot}
-          placement="mid"
-        />
-
-        <section className="mt-12 rounded-lg border bg-card p-6">
-          <h2 className="text-2xl font-semibold">Verdict</h2>
+        <section className="mt-12 border border-orange-900/20 bg-card p-6">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+            Final call
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold">Verdict</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
             GitHub Copilot Pro is not the flashiest AI coding product anymore,
             but it may still be the most practical first upgrade for many
@@ -258,23 +253,29 @@ export function GitHubCopilotProReview() {
         </section>
 
         <section className="mt-12 grid gap-4 md:grid-cols-2">
-          <div className="rounded-lg border bg-card p-5">
-            <h2 className="text-xl font-semibold">Pros</h2>
+          <div className="border border-orange-900/20 bg-[#fff7d8] p-5">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
+              What works
+            </p>
+            <h2 className="mt-2 text-xl font-semibold">Pros</h2>
             <div className="mt-4 grid gap-3">
               {pros.map((pro) => (
                 <p key={pro} className="flex gap-2 text-sm leading-6">
-                  <Check className="mt-0.5 size-4 shrink-0" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
                   {pro}
                 </p>
               ))}
             </div>
           </div>
-          <div className="rounded-lg border bg-card p-5">
-            <h2 className="text-xl font-semibold">Cons</h2>
+          <div className="border border-orange-900/20 bg-card p-5">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-muted-foreground">
+              Watch-outs
+            </p>
+            <h2 className="mt-2 text-xl font-semibold">Cons</h2>
             <div className="mt-4 grid gap-3">
               {cons.map((con) => (
                 <p key={con} className="flex gap-2 text-sm leading-6">
-                  <X className="mt-0.5 size-4 shrink-0" />
+                  <X className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                   {con}
                 </p>
               ))}
@@ -282,9 +283,14 @@ export function GitHubCopilotProReview() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-lg border bg-foreground p-6 text-background">
-          <h2 className="text-xl font-semibold">Bottom line</h2>
-          <p className="mt-3 leading-7">
+        <section className="mt-12 border-l-4 border-primary bg-[#fff7d8] p-6">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+            Bottom line
+          </p>
+          <h2 className="mt-2 text-xl font-semibold">
+            The low-friction coding upgrade.
+          </h2>
+          <p className="mt-3 leading-7 text-muted-foreground">
             GitHub Copilot Pro is the safest AI coding assistant recommendation
             for developers who want useful help inside their existing GitHub and
             IDE workflow.

@@ -73,17 +73,21 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <Button asChild variant="ghost" className="mb-10 px-0">
+        <Button
+          asChild
+          variant="outline"
+          className="mb-10 rounded-none border-orange-900/20 bg-transparent font-semibold hover:bg-accent"
+        >
           <Link href="/articles">
             <ArrowLeft />
             Articles
           </Link>
         </Button>
 
-        <p className="mb-4 text-sm font-medium text-muted-foreground">
+        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
           {article.category}
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
           {article.title}
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -105,7 +109,7 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
           </p>
         </section>
 
-        <section className="mt-12 rounded-lg border bg-card p-6">
+        <section className="mt-12 border border-orange-900/20 bg-card p-6">
           <h2 className="text-2xl font-semibold">The Workflow</h2>
           <p className="mt-3 leading-7 text-muted-foreground">
             Use this as a simple starting point. The exact details can change,
@@ -130,21 +134,26 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
           </div>
         </section>
 
-        <section className="mt-12 rounded-lg border bg-card p-6">
+        <section className="mt-12 border border-orange-900/20 bg-card p-6">
           <h2 className="text-2xl font-semibold">Common Mistakes</h2>
           <Checklist items={article.pitfalls} />
         </section>
 
-        <section className="mt-12 rounded-lg border bg-foreground p-6 text-background">
-          <h2 className="text-xl font-semibold">Bottom line</h2>
-          <p className="mt-3 leading-7">
+        <section className="mt-12 border-l-4 border-primary bg-[#fff7d8] p-6">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+            Bottom line
+          </p>
+          <h2 className="mt-2 text-xl font-semibold">
+            Keep the human edit in the loop.
+          </h2>
+          <p className="mt-3 leading-7 text-muted-foreground">
             Start small, make the workflow observable, and keep responsibility
             with the person doing the work. AI should reduce friction, but it
             should not remove taste, judgment, or accountability.
           </p>
         </section>
 
-        <RelatedContent items={relatedArticles} />
+        <RelatedContent items={relatedArticles} variant="editorial" />
 
         <GiscusComments />
       </article>
