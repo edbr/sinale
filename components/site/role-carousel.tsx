@@ -87,23 +87,23 @@ export function RoleCarousel({ pillars }: { pillars: RoleCarouselItem[] }) {
             <Link
               key={pillar.title}
               href={pillar.href}
-              className="group snap-start flex min-w-[18rem] max-w-88 shrink-0 flex-col justify-between rounded-xl border bg-card p-5 shadow-sm transition hover:-translate-y-1 hover:border-primary/25 hover:shadow-lg"
+              className="editorial-card group snap-start flex min-w-[18rem] max-w-88 shrink-0 flex-col justify-between rounded-xl border bg-card p-5 shadow-sm"
             >
               <div>
                 <div className="flex items-start gap-4">
                   <div
                     className={cn(
-                      "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-transparent",
+                      "editorial-card-media flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-transparent",
                       getPillarTone(pillar.title)
                     )}
                   >
                     <Icon className="size-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-primary">
+                    <p className="editorial-card-meta text-xs font-semibold text-primary">
                       Role
                     </p>
-                    <h3 className="mt-1 font-heading text-xl font-semibold leading-6">
+                    <h3 className="editorial-card-title mt-1 font-heading text-xl font-semibold leading-6">
                       {pillar.title}
                     </h3>
                   </div>
@@ -114,9 +114,9 @@ export function RoleCarousel({ pillars }: { pillars: RoleCarouselItem[] }) {
                 </p>
               </div>
 
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+              <span className="editorial-card-meta mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary">
                 Explore
-                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+                <ArrowRight className="editorial-card-arrow size-4" />
               </span>
             </Link>
         )})}

@@ -216,13 +216,13 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group rounded-2xl border bg-background/70 p-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+                className="editorial-card group rounded-2xl border bg-background/70 p-4"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold text-primary">{item.label}</p>
-                  <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                  <p className="editorial-card-meta text-sm font-semibold text-primary">{item.label}</p>
+                  <ArrowRight className="editorial-card-arrow size-4 text-muted-foreground" />
                 </div>
-                <h3 className="mt-2 font-heading text-xl font-semibold leading-6">
+                <h3 className="editorial-card-title mt-2 font-heading text-xl font-semibold leading-6">
                   {item.title}
                 </h3>
                 <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
@@ -237,21 +237,21 @@ export default function HomePage() {
               <Link
                 key={pillar.title}
                 href={pillar.href}
-                className="flex items-center justify-between border-b bg-card/70 p-3 transition last:border-b-0 hover:bg-accent/70"
+                className="editorial-card flex items-center justify-between border-b bg-card/70 p-3 last:border-b-0 hover:bg-accent/70"
               >
                 <div className="flex items-center gap-3 ">
                   <div className={cn(
-                    "flex size-9 items-center justify-center rounded-lg",
+                    "editorial-card-media flex size-9 items-center justify-center rounded-lg",
                     getPillarColor(pillar.title)
                   )}>
                     <pillar.icon className="size-4" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold">{pillar.title}</p>
-                    <p className="text-xs text-muted-foreground">Role-based tool picks</p>
+                    <p className="editorial-card-title text-sm font-semibold">{pillar.title}</p>
+                    <p className="editorial-card-meta text-xs text-muted-foreground">Role-based tool picks</p>
                   </div>
                 </div>
-                <ArrowRight className="size-4 text-muted-foreground" />
+                <ArrowRight className="editorial-card-arrow size-4 text-muted-foreground" />
               </Link>
             ))}
           </div>
@@ -288,30 +288,30 @@ export default function HomePage() {
               <Link
                 key={comparison.title}
                 href={comparison.href}
-                className="group rounded-2xl border bg-card p-5 shadow-sm transition hover:-translate-y-1 hover:border-primary/25 hover:shadow-lg"
+                className="editorial-card group rounded-2xl border bg-card p-5 shadow-sm"
               >
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="rounded-full border bg-muted/40 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  <span className="editorial-card-meta rounded-full border bg-muted/40 px-2.5 py-1 text-xs font-medium text-muted-foreground">
                     Comparison
                   </span>
-                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                  <ArrowRight className="editorial-card-arrow size-4 shrink-0 text-muted-foreground" />
                 </div>
 
                 <div className="mb-4 flex items-center gap-2">
                   {logos.length === 2 ? (
                     <>
-                      <ToolLogo name={logos[0]} className="size-9 rounded-lg border" />
+                      <ToolLogo name={logos[0]} className="editorial-card-media size-9 rounded-lg border" />
                       <span className="text-sm font-semibold text-primary">
                         x
                       </span>
-                      <ToolLogo name={logos[1]} className="size-9 rounded-lg border" />
+                      <ToolLogo name={logos[1]} className="editorial-card-media size-9 rounded-lg border" />
                     </>
                   ) : (
-                    <ToolLogo name={comparison.title} className="size-9 rounded-lg border" />
+                    <ToolLogo name={comparison.title} className="editorial-card-media size-9 rounded-lg border" />
                   )}
                 </div>
 
-                <h3 className="font-heading text-xl font-semibold leading-6">{comparison.title}</h3>
+                <h3 className="editorial-card-title font-heading text-xl font-semibold leading-6">{comparison.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
                   {comparison.description}
                 </p>
@@ -417,16 +417,16 @@ export default function HomePage() {
               <Link
                 key={workflow.title}
                 href={workflow.href}
-                className="group flex min-h-65 flex-col justify-between rounded-2xl border bg-card p-5 shadow-sm transition hover:-translate-y-1 hover:border-primary/25 hover:shadow-lg lg:col-span-1"
+                className="editorial-card group flex min-h-65 flex-col justify-between rounded-2xl border bg-card p-5 shadow-sm lg:col-span-1"
               >
                 <div>
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-primary">
+                    <span className="editorial-card-meta text-sm font-semibold text-primary">
                       0{index + 1}
                     </span>
-                    <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                    <ArrowRight className="editorial-card-arrow size-4 text-muted-foreground" />
                   </div>
-                  <h3 className="font-heading text-lg font-semibold leading-6">
+                  <h3 className="editorial-card-title font-heading text-lg font-semibold leading-6">
                     {workflow.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -481,18 +481,18 @@ export default function HomePage() {
               <Link
                 key={tool.name}
                 href={tool.href}
-                className="group flex items-start gap-4 rounded-2xl border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
+                className="editorial-card group flex items-start gap-4 rounded-2xl border bg-card p-4 shadow-sm"
               >
-                <ToolLogo name={tool.name} className="size-11 rounded-xl border" />
+                <ToolLogo name={tool.name} className="editorial-card-media size-11 rounded-xl border" />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <h3 className="font-heading font-semibold">{tool.name}</h3>
-                      <p className="mt-1 text-xs font-medium text-muted-foreground">
+                      <h3 className="editorial-card-title font-heading font-semibold">{tool.name}</h3>
+                      <p className="editorial-card-meta mt-1 text-xs font-medium text-muted-foreground">
                         {tool.category}
                       </p>
                     </div>
-                    <ArrowRight className="size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                    <ArrowRight className="editorial-card-arrow size-4 shrink-0 text-muted-foreground" />
                   </div>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     {tool.description}

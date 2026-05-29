@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
+import { GiscusComments } from "@/components/article/giscus-comments"
 import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import { articles } from "@/lib/articles"
@@ -65,6 +66,8 @@ export default function ArticlesPage() {
             </Link>
           ))}
         </div>
+
+        <GiscusComments />
       </section>
     </main>
   )

@@ -58,10 +58,10 @@ export function RelatedContent({
             key={item.href}
             href={item.href}
             className={cn(
-              "group transition",
+              "editorial-card group",
               isEditorial
                 ? "border-t bg-transparent px-5 py-5 last:border-b hover:bg-background/60"
-                : "rounded-lg border bg-card p-4 hover:-translate-y-0.5 hover:shadow-md"
+                : "rounded-lg border bg-card p-4"
             )}
           >
             <div className="flex items-start justify-between gap-4">
@@ -76,10 +76,12 @@ export function RelatedContent({
                       name={item.title}
                       domain={item.domain}
                       logo={item.logo}
+                      className="editorial-card-media"
                     />
                   )}
                   <h3
                     className={cn(
+                      "editorial-card-title",
                       isEditorial
                         ? "font-heading text-xl font-semibold leading-6"
                         : "font-semibold leading-6"
@@ -97,7 +99,7 @@ export function RelatedContent({
                   {item.description}
                 </p>
               </div>
-              <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+              <ArrowRight className="editorial-card-arrow mt-1 size-4 shrink-0 text-muted-foreground" />
             </div>
           </Link>
         ))}

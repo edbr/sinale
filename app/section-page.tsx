@@ -25,6 +25,7 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
+import { GiscusComments } from "@/components/article/giscus-comments"
 import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
 import { pillars, type CardItem } from "@/lib/site-content"
@@ -273,10 +274,10 @@ export function SectionPage({
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "group bg-card p-6 transition hover:-translate-y-1",
+                    "editorial-card group bg-card p-6",
                     isPoster
-                      ? "rounded-xl border shadow-sm hover:border-primary/25 hover:shadow-lg"
-                      : "rounded-lg border hover:shadow-lg"
+                      ? "rounded-xl border shadow-sm"
+                      : "rounded-lg border"
                   )}
                 >
                   <div className="mb-5 flex items-start justify-between gap-4">
@@ -288,14 +289,14 @@ export function SectionPage({
                           name={comparisonTools[0]}
                           domain={item.domain}
                           logo={item.logo}
-                          className="size-10 rounded-lg border"
+                          className="editorial-card-media size-10 rounded-lg border"
                         />
                         <span className="text-sm font-semibold text-primary">
                           vs
                         </span>
                         <ToolLogo
                           name={comparisonTools[1]}
-                          className="size-10 rounded-lg border"
+                          className="editorial-card-media size-10 rounded-lg border"
                         />
                       </div>
                     ) : (
@@ -303,13 +304,14 @@ export function SectionPage({
                         name={getCardLogoTool(item)}
                         domain={item.domain}
                         logo={item.logo}
-                        className={cn("size-10 rounded-lg", isPoster && "border")}
+                        className={cn("editorial-card-media size-10 rounded-lg", isPoster && "border")}
                       />
                     )}
-                    <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
+                    <ArrowRight className="editorial-card-arrow mt-1 size-4 shrink-0 text-muted-foreground" />
                   </div>
                   <h2
                     className={cn(
+                      "editorial-card-title",
                       isPoster
                         ? "font-heading text-xl font-semibold leading-6"
                         : "text-xl font-semibold"
@@ -322,7 +324,7 @@ export function SectionPage({
                   </p>
                   <span
                     className={cn(
-                      "mt-6 inline-flex items-center gap-1",
+                      "editorial-card-meta mt-6 inline-flex items-center gap-1",
                       isPoster
                         ? "text-sm font-semibold text-primary"
                         : "text-sm font-medium"
@@ -353,24 +355,26 @@ export function SectionPage({
                 <Link
                   key={role.href}
                   href={role.href}
-                  className="group rounded-lg border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="editorial-card group rounded-lg border bg-card p-6"
                 >
-                  <div className="mb-5 flex size-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <div className="editorial-card-media mb-5 flex size-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
                     <role.icon className="size-5" />
                   </div>
-                  <h3 className="text-xl font-semibold">{role.title}</h3>
+                  <h3 className="editorial-card-title text-xl font-semibold">{role.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     {role.description}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium">
+                  <span className="editorial-card-meta mt-6 inline-flex items-center gap-1 text-sm font-medium">
                     Explore
-                    <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+                    <ArrowRight className="editorial-card-arrow size-4" />
                   </span>
                 </Link>
               ))}
             </div>
           </section>
         ) : null}
+
+        <GiscusComments />
       </section>
     </main>
   )
