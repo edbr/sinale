@@ -5,10 +5,12 @@ import { ApolloToolPage } from "./apollo"
 import { ArtisanToolPage } from "./artisan"
 import { AutogenToolPage } from "./autogen"
 import { CaptionsToolPage } from "./captions"
+import { ClaudeToolPage } from "./claude"
 import { ClayToolPage } from "./clay"
 import { CrewaiToolPage } from "./crewai"
 import { CursorToolPage } from "./cursor"
 import { DecktopusToolPage } from "./decktopus"
+import { ElicitToolPage } from "./elicit"
 import { GongToolPage } from "./gong"
 import { GumloopToolPage } from "./gumloop"
 import { HelpscoutAiToolPage } from "./helpscout-ai"
@@ -16,11 +18,13 @@ import { HirevueToolPage } from "./hirevue"
 import { LanggraphToolPage } from "./langgraph"
 import { LavenderToolPage } from "./lavender"
 import { OpusClipToolPage } from "./opus-clip"
+import { PerplexityToolPage } from "./perplexity"
 import { RegieToolPage } from "./regie"
 import { RelayToolPage } from "./relay"
 import { RelevanceAiToolPage } from "./relevance-ai"
 import { ReplitToolPage } from "./replit"
 import { WindsurfToolPage } from "./windsurf"
+import { YouComToolPage } from "./you-com"
 
 export function generateStaticParams() {
   return toolDirectory.map((tool) => ({ slug: tool.slug }))
@@ -46,6 +50,8 @@ export async function generateMetadata({
           ? "AutoGen | Sinale"
         : slug === "captions"
           ? "Captions | Sinale"
+        : slug === "claude"
+          ? "Claude | Sinale"
         : slug === "clay"
           ? "Clay | Sinale"
         : slug === "crewai"
@@ -54,6 +60,8 @@ export async function generateMetadata({
           ? "Cursor | Sinale"
         : slug === "decktopus"
         ? "Decktopus | Sinale"
+        : slug === "elicit"
+          ? "Elicit | Sinale"
         : slug === "gong"
           ? "Gong | Sinale"
         : slug === "gumloop"
@@ -66,6 +74,8 @@ export async function generateMetadata({
           ? "Lavender | Sinale"
         : slug === "opus-clip"
           ? "Opus Clip | Sinale"
+        : slug === "perplexity"
+          ? "Perplexity | Sinale"
         : slug === "regie"
           ? "Regie.ai | Sinale"
         : slug === "relay"
@@ -76,6 +86,8 @@ export async function generateMetadata({
           ? "Replit | Sinale"
         : slug === "windsurf"
           ? "Windsurf | Sinale"
+        : slug === "you-com"
+          ? "You.com | Sinale"
         : item
           ? `${item.name} | Sinale`
           : "AI Tool | Sinale",
@@ -90,6 +102,8 @@ export async function generateMetadata({
           ? "AutoGen guide for open-source multi-agent applications, AgentChat, Core, Studio, extensions, and Microsoft Agent Framework migration."
         : slug === "captions"
           ? "Captions guide for AI captions, short-form video editing, AI video generation, avatars, translation, eye contact correction, pricing, and creator workflows."
+        : slug === "claude"
+          ? "Claude guide for reasoning, writing, research synthesis, artifacts, projects, web search, connectors, pricing, and knowledge work."
         : slug === "clay"
           ? "Clay guide for GTM enrichment, prospecting workflows, Claygent research, data waterfalls, CRM enrichment, signals, and outbound automation."
         : slug === "crewai"
@@ -98,6 +112,8 @@ export async function generateMetadata({
           ? "Cursor guide for AI coding, coding agents, codebase understanding, autocomplete, cloud agents, CLI workflows, code review, pricing, and developer productivity."
         : slug === "decktopus"
         ? "Decktopus guide for AI deck generation, visual storytelling, slides, and executive presentations."
+        : slug === "elicit"
+          ? "Elicit guide for literature reviews, paper search, evidence synthesis, data extraction, systematic reviews, research alerts, pricing, and research workflows."
         : slug === "gong"
           ? "Gong guide for revenue intelligence, conversation intelligence, sales coaching, deal execution, forecasting, and RevOps visibility."
         : slug === "gumloop"
@@ -110,6 +126,8 @@ export async function generateMetadata({
           ? "Lavender guide for AI sales email coaching, cold email writing, personalization, team coaching, sales integrations, pricing, and Ora."
         : slug === "opus-clip"
           ? "Opus Clip guide for video generation, editing, clips, captions, and creative repurposing workflows."
+        : slug === "perplexity"
+          ? "Perplexity guide for AI search, answer engine workflows, source discovery, Deep Research, Spaces, Comet, pricing, and enterprise research."
         : slug === "regie"
           ? "Regie.ai guide for AI sales engagement, prospecting agents, signal selling, AI dialer, enrichment, pricing, and outbound workflows."
         : slug === "relay"
@@ -120,6 +138,8 @@ export async function generateMetadata({
           ? "Replit guide for AI app building, browser-based coding, prototypes, deployments, and Replit Agent."
         : slug === "windsurf"
           ? "Windsurf guide for Cascade, agentic coding, AI IDE workflows, multi-file editing, MCP, app previews, pricing, and developer productivity."
+        : slug === "you-com"
+          ? "You.com guide for AI search, ARI, research agents, Search API, enterprise search infrastructure, model access, pricing, and RAG workflows."
         : (item?.description ??
           "Explore practical AI tool recommendations, workflows, reviews, and comparisons."),
     path: `/tools/${slug}`,
@@ -172,6 +192,12 @@ export default async function ToolPage({
     return <CaptionsToolPage relatedItems={relatedItems} />
   }
 
+  if (slug === "claude") {
+    const relatedItems = getRelatedToolItems(slug)
+
+    return <ClaudeToolPage relatedItems={relatedItems} />
+  }
+
   if (slug === "clay") {
     const relatedItems = getRelatedToolItems(slug)
 
@@ -208,6 +234,12 @@ export default async function ToolPage({
     return <DecktopusToolPage relatedItems={relatedItems} />
   }
 
+  if (slug === "elicit") {
+    const relatedItems = getRelatedToolItems(slug)
+
+    return <ElicitToolPage relatedItems={relatedItems} />
+  }
+
   if (slug === "gong") {
     const relatedItems = getRelatedToolItems(slug)
 
@@ -238,6 +270,12 @@ export default async function ToolPage({
     return <OpusClipToolPage relatedItems={relatedItems} />
   }
 
+  if (slug === "perplexity") {
+    const relatedItems = getRelatedToolItems(slug)
+
+    return <PerplexityToolPage relatedItems={relatedItems} />
+  }
+
   if (slug === "regie") {
     const relatedItems = getRelatedToolItems(slug)
 
@@ -266,6 +304,12 @@ export default async function ToolPage({
     const relatedItems = getRelatedToolItems(slug)
 
     return <WindsurfToolPage relatedItems={relatedItems} />
+  }
+
+  if (slug === "you-com") {
+    const relatedItems = getRelatedToolItems(slug)
+
+    return <YouComToolPage relatedItems={relatedItems} />
   }
 
   return (
