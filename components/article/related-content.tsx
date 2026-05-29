@@ -41,7 +41,7 @@ export function RelatedContent({
           <h2
             className={cn(
               isEditorial
-                ? "font-heading text-3xl font-semibold tracking-normal"
+                ? "font-serif text-3xl font-medium tracking-normal"
                 : "text-2xl font-semibold"
             )}
           >

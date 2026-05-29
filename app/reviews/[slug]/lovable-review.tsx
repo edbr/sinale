@@ -66,7 +66,7 @@ export function LovableReview() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Review
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Lovable Review (2026): The Fastest Way to Turn an Idea Into a Working
           App
         </h1>

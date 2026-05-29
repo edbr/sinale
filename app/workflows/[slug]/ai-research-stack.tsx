@@ -175,7 +175,7 @@ export function AiResearchStackWorkflow() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Workflow
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-medium tracking-tight md:text-4xl">
           AI Research Stack (2026): Collect Sources, Synthesize Evidence, and
           Make Better Decisions
         </h1>

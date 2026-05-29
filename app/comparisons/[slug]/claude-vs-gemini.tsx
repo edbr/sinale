@@ -107,7 +107,7 @@ export function ClaudeVsGeminiComparison() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Comparison
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Claude vs Gemini (2026): Which AI Assistant Is Better for Work?
         </h1>
 

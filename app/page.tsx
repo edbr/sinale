@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ArrowRight, Search } from "lucide-react"
-
 import { ToolLogo } from "@/components/site/tool-logo"
 import { RoleCarousel } from "@/components/site/role-carousel"
 import { Button } from "@/components/ui/button"
@@ -121,22 +120,22 @@ export const metadata = pageMetadata({
 
 export default function HomePage() {
   return (
-    <main className="hero-glow min-h-screen bg-background text-foreground">
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.08fr_0.92fr] md:py-20">
+    <main className="home-hero hero-glow min-h-screen bg-background text-foreground">
+      <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.08fr_0.92fr] md:py-20">
         <div>
-          <p className="mb-5 text-sm font-semibold text-primary">
+          <p className="hero-reveal mb-5 text-sm font-semibold text-primary">
             Independent AI guide
           </p>
-          <h1 className="max-w-4xl font-heading text-5xl font-semibold leading-[0.95] tracking-normal text-foreground md:text-7xl">
+          <h1 className="hero-reveal hero-reveal-delay-1 editorial-display max-w-5xl text-foreground">
             Find the <span className="text-primary">right AI tools</span> for the way you work.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+          <p className="hero-reveal hero-reveal-delay-2 mt-6 max-w-2xl text-lg leading-6 text-muted-foreground">
             Practical reviews, workflows, and comparisons for designers,
             developers, product teams, data professionals, and founders.
           </p>
 
-          <form action="/search" className="mt-8 max-w-2xl">
+          <form action="/search" className="hero-reveal hero-reveal-delay-3 mt-8 max-w-2xl">
             <div className="flex h-14 items-center gap-3 rounded-2xl border bg-card px-4 shadow-lg shadow-slate-900/5 transition focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/20">
               <Search className="size-5 shrink-0 text-muted-foreground" />
               <input
@@ -162,7 +161,7 @@ export default function HomePage() {
             </div>
           </form>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="hero-reveal hero-reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="h-12 rounded-full px-5 font-semibold shadow-sm">
               <Link href="/reviews">
                 Explore reviews
@@ -180,10 +179,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        <aside className="mx-auto w-full max-w-xl rounded-3xl border bg-card/85 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur">
+        <aside className="hero-panel hero-reveal hero-reveal-delay-2 mx-auto w-full max-w-xl rounded-3xl border bg-card/85 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur">
           <div className="border-b pb-5">
             <p className="text-sm font-semibold text-primary">Start here</p>
-            <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight">
+            <h2 className="mt-2 font-serif text-3xl font-medium leading-tight tracking-[-0.04em]">
               Useful AI guidance without the hype.
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -264,7 +263,7 @@ export default function HomePage() {
             <p className="mb-3 text-sm font-semibold text-primary">
               Popular Comparisons
             </p>
-            <h2 className="font-heading text-4xl font-semibold tracking-normal md:text-5xl">
+            <h2 className="editorial-section-title">
               Featured Comparisons
             </h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -329,7 +328,7 @@ export default function HomePage() {
               <p className="text-sm font-semibold text-primary">
                 Latest review
               </p>
-              <h2 className="mt-4 font-heading text-4xl font-semibold tracking-normal text-foreground md:text-6xl">
+              <h2 className="mt-4 max-w-4xl font-serif text-4xl font-medium leading-none tracking-[-0.045em] text-foreground ">
                 {reviews[0].title}
               </h2>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
@@ -375,7 +374,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-10">
-          <h2 className="font-heading text-4xl font-semibold tracking-normal md:text-5xl">
+          <h2 className="editorial-section-title">
             Browse by role
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -397,7 +396,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <h2 className="font-heading text-4xl font-semibold tracking-normal md:text-5xl">
+              <h2 className="editorial-section-title">
                 Popular Workflows
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -460,7 +459,7 @@ export default function HomePage() {
               <p className="mb-3 text-sm font-semibold text-primary">
                 Trending Tools
               </p>
-              <h2 className="font-heading text-4xl font-semibold tracking-normal md:text-5xl">
+              <h2 className="editorial-section-title">
                 Top Tools This Month
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -487,7 +486,7 @@ export default function HomePage() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <h3 className="editorial-card-title font-heading font-semibold">{tool.name}</h3>
+                      <h3 className="editorial-card-title font-serif font-medium">{tool.name}</h3>
                       <p className="editorial-card-meta mt-1 text-xs font-medium text-muted-foreground">
                         {tool.category}
                       </p>
@@ -507,11 +506,11 @@ export default function HomePage() {
       <section className="border-t bg-secondary/50">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-20 md:grid-cols-3">
           <div>
-            <h2 className="font-heading text-3xl font-semibold">What you&apos;ll find here</h2>
+            <h2 className="font-serif text-3xl font-medium leading-tight tracking-[-0.04em]">What you&apos;ll find here</h2>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold">Reviews</h3>
+            <h3 className="font-serif font-medium">Reviews</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
               Hands-on breakdowns of AI tools, pricing, strengths, weaknesses,
               and best-fit use cases.
@@ -519,7 +518,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold">Workflows</h3>
+            <h3 className="font-serif font-medium">Workflows</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
               Real examples of how AI tools fit into product design, coding,
               research, analytics, and startup operations.

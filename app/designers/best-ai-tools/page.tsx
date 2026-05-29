@@ -195,7 +195,7 @@ export default function BestAiToolsForDesignersPage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Designer Guide
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-medium tracking-tight md:text-4xl">
           Best AI Tools for Designers (2026): The Tools That Actually Improve
           Design Work
         </h1>

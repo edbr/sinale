@@ -63,7 +63,7 @@ export function ClaudeOpus47Review() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Review
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Claude Opus 4.7 Review (2026): Anthropic&apos;s New Model for Hard
           Coding and Complex Work
         </h1>

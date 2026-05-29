@@ -70,7 +70,7 @@ export async function ArticlePage({
             className="mb-5 size-12 rounded-lg"
           />
         ) : null}
-        <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           {item.title}
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">

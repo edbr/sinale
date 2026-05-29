@@ -201,7 +201,7 @@ export default function ProductDesignAiStackPage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Designer Guide
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-medium tracking-tight md:text-4xl">
           My Product Design AI Stack (2026): The Tools I Use Every Week
         </h1>
 

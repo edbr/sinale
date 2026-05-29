@@ -75,7 +75,7 @@ export function CursorVsClaudeCodeComparison() {
         <p className="mb-4 text-sm font-semibold text-primary">
           Comparison
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-medium leading-[1.12] tracking-tight md:text-4xl">
           Cursor vs Claude Code (2026): Which AI Coding Assistant Should You
           Use?
         </h1>

@@ -82,7 +82,7 @@ export function WindsurfToolPage({
 
         <p className="mb-4 text-sm font-medium text-muted-foreground">Tools</p>
         <ToolLogo name="Windsurf" className="mb-5 size-12 rounded-lg" />
-        <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Windsurf
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">

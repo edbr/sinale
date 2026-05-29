@@ -71,7 +71,7 @@ export function LovableVsBoltComparison() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Comparison
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Lovable vs Bolt (2026): Which AI App Builder Is Better?
         </h1>
 

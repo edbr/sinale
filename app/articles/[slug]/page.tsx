@@ -87,7 +87,7 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
         <p className="mb-4 text-sm font-semibold text-primary">
           {article.category}
         </p>
-        <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium leading-[1.12] tracking-tight md:text-4xl">
           {article.title}
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">

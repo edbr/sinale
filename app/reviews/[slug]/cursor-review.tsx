@@ -63,7 +63,7 @@ export function CursorReview() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Review
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Cursor Review (2026): The Best AI Coding Assistant I&apos;ve Used
         </h1>
 

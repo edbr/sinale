@@ -16,7 +16,7 @@ export default function DisclosurePage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Disclosure
         </p>
-        <h1 className="text-5xl font-heading font-semibold leading-[1.02] tracking-tight md:text-7xl">
+        <h1 className="text-3xl font-serif font-medium leading-[1.08] tracking-tight md:text-4xl">
           Affiliate Disclosure
         </h1>
         <div className="mt-10 grid gap-8 text-base leading-7 text-muted-foreground">

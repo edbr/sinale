@@ -233,7 +233,7 @@ export default function BestAiCodingAssistantsPage() {
         <p className="mb-4 text-sm font-semibold text-primary">
           Developer Guide
         </p>
-        <h1 className="max-w-4xl font-heading text-5xl font-semibold leading-[0.98] tracking-tight md:text-7xl">
+        <h1 className="max-w-4xl font-serif text-3xl font-medium leading-[1.08] tracking-tight md:text-4xl">
           Best AI Coding Assistants (2026): Tested and Ranked
         </h1>
 
@@ -289,7 +289,7 @@ export default function BestAiCodingAssistantsPage() {
                   <p className="text-sm font-semibold text-primary">
                     #{tool.rank}
                   </p>
-                  <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight">{tool.name}</h2>
+                  <h2 className="mt-2 font-serif text-3xl font-medium tracking-tight">{tool.name}</h2>
                   <p className="mt-2 font-medium">{tool.award}</p>
                 </div>
                 <span className="w-fit rounded-full border bg-secondary/70 px-3 py-1.5 text-sm font-semibold">

@@ -94,7 +94,7 @@ export default function AddingCommentsNextjsGiscusPage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Developer Guide
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           How I Added Comments to My Next.js Site with Giscus in Under 30
           Minutes
         </h1>

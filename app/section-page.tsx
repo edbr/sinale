@@ -28,6 +28,7 @@ import {
 import { GiscusComments } from "@/components/article/giscus-comments"
 import { ToolLogo } from "@/components/site/tool-logo"
 import { Button } from "@/components/ui/button"
+import { getCategoryPageStyle } from "@/lib/category-theme"
 import { pillars, type CardItem } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
 
@@ -217,13 +218,19 @@ export function SectionPage({
   )
 
   return (
-    <main className={cn("min-h-screen bg-background text-foreground", isPoster && "hero-glow")}>
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <main
+      style={getCategoryPageStyle(`${eyebrow}:${title}`)}
+      className={cn(
+        "category-page min-h-screen bg-background text-foreground",
+        isPoster && "hero-glow"
+      )}
+    >
+      <section className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:py-24">
         <Button
           asChild
           variant={isPoster ? "outline" : "ghost"}
           className={cn(
-            "mb-10",
+            "page-enter mb-10",
             isPoster
               ? "rounded-full bg-background/60 font-semibold hover:bg-accent"
               : "px-0"
@@ -235,34 +242,25 @@ export function SectionPage({
           </Link>
         </Button>
 
-        <p
-          className={cn(
-            "mb-4",
-            isPoster
-              ? "text-sm font-semibold text-primary"
-              : "text-sm font-medium text-muted-foreground"
-          )}
-        >
+        <p className={cn("page-enter page-enter-delay-1 editorial-eyebrow mb-5", isPoster && "text-primary")}>
           {eyebrow}
         </p>
         <h1
           className={cn(
-            "max-w-4xl",
-            isPoster
-              ? "font-heading text-5xl font-semibold leading-[0.95] tracking-normal md:text-7xl"
-              : "text-5xl font-semibold tracking-tight md:text-7xl"
+            "page-enter page-enter-delay-1 editorial-display max-w-5xl",
+            isPoster && "text-foreground"
           )}
         >
           {title}
         </h1>
-        <p className={cn("mt-6 max-w-2xl text-lg leading-8 text-muted-foreground", isPoster && "font-medium")}>
+        <p className="page-enter page-enter-delay-2 editorial-deck mt-7">
           {description}
         </p>
 
         {items.length > 0 ? (
           <div
             className={cn(
-              "mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3",
+              "page-enter page-enter-delay-3 mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3",
               isPoster && "rounded-2xl border bg-card/80 p-4 shadow-sm"
             )}
           >
@@ -341,7 +339,7 @@ export function SectionPage({
         {showRoleBrowse ? (
           <section className="mt-20 border-t pt-14">
             <div className="mb-8">
-              <h2 className="text-3xl font-semibold tracking-tight">
+              <h2 className="editorial-section-title">
                 Browse by role
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">

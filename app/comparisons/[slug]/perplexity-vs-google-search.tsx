@@ -107,7 +107,7 @@ export function PerplexityVsGoogleSearchComparison() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Comparison
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Perplexity vs Google Search (2026): Which Is Better for Research?
         </h1>
 

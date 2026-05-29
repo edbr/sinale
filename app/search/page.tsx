@@ -158,7 +158,7 @@ export default async function SearchPage({
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Search
         </p>
-        <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
+        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
           Search Sinale
         </h1>
         <form action="/search" className="mt-8">
