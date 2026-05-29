@@ -498,6 +498,124 @@
     animation-delay: 220ms;
   }
 
+  .next-related-shell {
+    background: var(--background);
+    isolation: isolate;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .next-related-shell::before {
+    background:
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border)),
+      linear-gradient(var(--border), var(--border));
+    background-position:
+      calc(50% - 35rem) 1.75rem,
+      calc(50% - 35rem) 1.75rem,
+      calc(50% - 24rem) 1.75rem,
+      calc(50% - 35rem) 7.75rem,
+      calc(50% + 24rem) calc(100% - 7.75rem),
+      calc(50% + 24rem) calc(100% - 7.75rem),
+      calc(50% + 35rem) calc(100% - 7.75rem),
+      calc(50% + 24rem) calc(100% - 1.75rem);
+    background-repeat: no-repeat;
+    background-size:
+      11rem 1px,
+      1px 6rem,
+      1px 6rem,
+      11rem 1px,
+      11rem 1px,
+      1px 6rem,
+      1px 6rem,
+      11rem 1px;
+    content: "";
+    inset: 0;
+    opacity: 0.82;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .next-related-card {
+    isolation: isolate;
+    overflow: visible;
+    position: relative;
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .next-related-card::before {
+    background: transparent;
+    content: "";
+    inset: -1rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: -2;
+  }
+
+  .next-related-card::after {
+    background: var(--next-accent);
+    content: "";
+    inline-size: 3px;
+    inset-block: 1.5rem;
+    inset-inline-start: 0;
+    opacity: 0.82;
+    position: absolute;
+    transform: scaleY(0.32);
+    transform-origin: top;
+    transition: transform 220ms ease;
+  }
+
+  .next-related-card:hover {
+    border-color: color-mix(in oklab, var(--next-accent) 34%, var(--border));
+    box-shadow: 0 22px 56px oklch(22% 0.018 255 / 0.1);
+    transform: translateY(-3px);
+  }
+
+  .next-related-card:hover::after {
+    transform: scaleY(1);
+  }
+
+  .next-related-rule {
+    display: none;
+  }
+
+  .next-related-title,
+  .next-related-figure,
+  .next-related-arrow {
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .next-related-card:hover .next-related-title {
+    color: var(--next-accent);
+    transform: translateX(3px);
+  }
+
+  .next-related-card:hover .next-related-figure {
+    color: var(--next-accent);
+    transform: translateY(-2px);
+  }
+
+  .next-related-card:hover .next-related-arrow {
+    color: var(--next-accent);
+    transform: translateX(5px);
+  }
+
+  .dark .next-related-card::before {
+    background: transparent;
+  }
+
   .editorial-card {
     position: relative;
     overflow: hidden;
@@ -574,6 +692,11 @@
     .page-enter,
     .category-page::before,
     .category-page::after,
+    .next-related-card,
+    .next-related-card::after,
+    .next-related-title,
+    .next-related-figure,
+    .next-related-arrow,
     .editorial-card,
     .editorial-card::before,
     .editorial-card-title,
@@ -585,6 +708,10 @@
     }
 
     .editorial-card:hover,
+    .next-related-card:hover,
+    .next-related-card:hover .next-related-title,
+    .next-related-card:hover .next-related-figure,
+    .next-related-card:hover .next-related-arrow,
     .editorial-card:hover .editorial-card-title,
     .editorial-card:hover .editorial-card-meta,
     .editorial-card:hover .editorial-card-arrow,
