@@ -88,7 +88,7 @@ export default function TermsPage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Last updated: May 2026
         </p>
-        <h1 className="text-5xl font-heading font-extrabold leading-[0.95] tracking-[-0.05em] md:text-7xl">
+        <h1 className="text-5xl font-heading font-semibold leading-[1.02] tracking-tight md:text-7xl">
           Terms of Service
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">

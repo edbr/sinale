@@ -24,9 +24,9 @@ const roleNav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-orange-900/15 bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="flex items-center gap-2 font-heading text-sm font-black uppercase tracking-[0.18em]">
+        <Link href="/" className="flex items-center gap-2 font-heading text-sm font-semibold">
           <Image
             src="/logo.png"
             alt="Sinale logo"
@@ -43,7 +43,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground transition hover:text-foreground"
+              className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -56,14 +56,14 @@ export function SiteHeader() {
             asChild
             variant="outline"
             size="sm"
-            className="hidden rounded-none border-orange-900/25 bg-transparent text-xs font-bold uppercase tracking-[0.14em] sm:inline-flex"
+            className="hidden rounded-full bg-background/70 text-sm font-medium sm:inline-flex"
           >
             <Link href="/search">
               <Search />
               Search
             </Link>
           </Button>
-          <Button asChild size="sm" className="rounded-none bg-foreground text-xs font-bold uppercase tracking-[0.14em] text-background hover:bg-primary">
+          <Button asChild size="sm" className="rounded-full text-sm font-medium shadow-sm">
             <Link href="https://sinale.beehiiv.com/subscribe">
               <Mail />
               Subscribe
@@ -72,13 +72,13 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-t border-orange-900/15 md:hidden">
+      <div className="border-t md:hidden">
         <nav className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-6 py-2">
           {[...primaryNav, ...roleNav].map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="shrink-0 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground transition hover:text-foreground"
+              className="shrink-0 rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
             >
               {item.label}
             </Link>

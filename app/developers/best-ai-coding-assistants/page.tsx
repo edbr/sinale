@@ -217,13 +217,12 @@ const recommendations = [
 export default function BestAiCodingAssistantsPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(51,33,22,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(51,33,22,0.055)_1px,transparent_1px)] bg-size-[32px_32px]" />
-      <div className="pointer-events-none absolute left-0 top-0 h-136 w-full bg-[radial-gradient(circle_at_18%_14%,rgba(239,106,74,0.24),transparent_32%),radial-gradient(circle_at_82%_6%,rgba(115,198,170,0.26),transparent_28%)]" />
+      <div className="pointer-events-none absolute left-0 top-0 h-136 w-full bg-[radial-gradient(circle_at_18%_14%,oklch(80%_0.08_238_/_0.16),transparent_32%),radial-gradient(circle_at_82%_6%,oklch(84%_0.06_184_/_0.18),transparent_28%)]" />
       <article className="relative mx-auto max-w-5xl px-6 py-16 md:py-24">
         <Button
           asChild
           variant="outline"
-          className="mb-10 rounded-none border-orange-900/20 bg-background/70 font-semibold backdrop-blur hover:bg-accent"
+          className="mb-10 rounded-full bg-background/70 font-semibold backdrop-blur hover:bg-accent"
         >
           <Link href="/developers">
             <ArrowLeft />
@@ -231,10 +230,10 @@ export default function BestAiCodingAssistantsPage() {
           </Link>
         </Button>
 
-        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
+        <p className="mb-4 text-sm font-semibold text-primary">
           Developer Guide
         </p>
-        <h1 className="max-w-4xl font-heading text-5xl font-black uppercase leading-[0.92] tracking-normal md:text-7xl">
+        <h1 className="max-w-4xl font-heading text-5xl font-semibold leading-[0.98] tracking-tight md:text-7xl">
           Best AI Coding Assistants (2026): Tested and Ranked
         </h1>
 
@@ -256,10 +255,10 @@ export default function BestAiCodingAssistantsPage() {
           </p>
         </div>
 
-        <section className="mt-12 border-2 border-foreground bg-[#fff7d8] p-6 shadow-[12px_12px_0_rgba(51,33,22,0.14)]">
+        <section className="mt-12 rounded-2xl border bg-card/90 p-6 shadow-sm">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+              <p className="text-sm font-semibold text-primary">
                 Ranked shortlist
               </p>
               <h2 className="mt-2 text-2xl font-semibold">Comparison Table</h2>
@@ -268,7 +267,7 @@ export default function BestAiCodingAssistantsPage() {
               Best default: Cursor
             </p>
           </div>
-          <div className="mt-5 divide-y divide-orange-900/15 border border-orange-900/20 bg-background/70">
+          <div className="mt-5 divide-y rounded-xl border bg-background/70">
             {tools.map((tool) => (
               <div
                 key={tool.name}
@@ -284,16 +283,16 @@ export default function BestAiCodingAssistantsPage() {
 
         <section className="mt-12 grid gap-6">
           {tools.map((tool) => (
-            <div key={tool.name} className="border border-orange-900/20 bg-card/95 p-6 shadow-[0_14px_44px_rgba(51,33,22,0.07)]">
+            <div key={tool.name} className="rounded-2xl border bg-card/95 p-6 shadow-sm">
               <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
+                  <p className="text-sm font-semibold text-primary">
                     #{tool.rank}
                   </p>
-                  <h2 className="mt-2 font-heading text-3xl font-black uppercase tracking-normal">{tool.name}</h2>
+                  <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight">{tool.name}</h2>
                   <p className="mt-2 font-medium">{tool.award}</p>
                 </div>
-                <span className="w-fit border border-orange-900/20 bg-[#fff7d8] px-3 py-1.5 text-sm font-semibold">
+                <span className="w-fit rounded-full border bg-secondary/70 px-3 py-1.5 text-sm font-semibold">
                   {tool.rating}
                 </span>
               </div>
@@ -319,7 +318,7 @@ export default function BestAiCodingAssistantsPage() {
               </div>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="border border-orange-900/15 bg-background p-4">
+                <div className="rounded-xl border bg-background p-4">
                   <h3 className="font-semibold">Pros</h3>
                   <div className="mt-3 grid gap-2 text-sm text-muted-foreground">
                     {tool.pros.map((item) => (
@@ -327,7 +326,7 @@ export default function BestAiCodingAssistantsPage() {
                     ))}
                   </div>
                 </div>
-                <div className="border border-orange-900/15 bg-background p-4">
+                <div className="rounded-xl border bg-background p-4">
                   <h3 className="font-semibold">Cons</h3>
                   <div className="mt-3 grid gap-2 text-sm text-muted-foreground">
                     {tool.cons.map((item) => (
@@ -337,7 +336,7 @@ export default function BestAiCodingAssistantsPage() {
                 </div>
               </div>
 
-              <p className="mt-6 border-l-4 border-primary bg-[#fff7d8] p-4 text-sm leading-6">
+              <p className="mt-6 rounded-xl border bg-secondary/60 p-4 text-sm leading-6">
                 <span className="font-semibold">Bottom line:</span>{" "}
                 {tool.bottomLine}
               </p>
@@ -353,7 +352,7 @@ export default function BestAiCodingAssistantsPage() {
             {recommendations.map((recommendation) => (
               <div
                 key={recommendation.title}
-                className="border border-orange-900/20 bg-card p-5"
+                className="rounded-xl border bg-card p-5"
               >
                 <h3 className="font-semibold">{recommendation.title}</h3>
                 <div className="mt-4 grid gap-2 text-sm text-muted-foreground">
@@ -371,27 +370,27 @@ export default function BestAiCodingAssistantsPage() {
 
 
 
-        <section className="mt-12 border-2 border-foreground bg-[#73c6aa] p-6 shadow-[10px_10px_0_rgba(51,33,22,0.16)]">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-foreground">
+        <section className="mt-12 rounded-2xl border bg-accent p-6 shadow-sm">
+          <p className="text-sm font-semibold text-primary">
             Final stack
           </p>
           <h2 className="mt-2 text-2xl font-semibold">My Recommendation</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             {["#1 Cursor", "#2 Claude Code", "#3 Windsurf"].map((item) => (
-              <p key={item} className="border border-foreground bg-background p-4 font-semibold">
+              <p key={item} className="rounded-xl border bg-background p-4 font-semibold">
                 {item}
               </p>
             ))}
           </div>
-          <p className="mt-5 leading-7 text-foreground/80">
+          <p className="mt-5 leading-7 text-muted-foreground">
             If budget allows, the strongest setup is often Cursor for
             implementation and Claude for reasoning and architecture. One helps
             you build faster. The other helps you build smarter.
           </p>
         </section>
 
-        <section className="mt-12 border-l-4 border-primary bg-[#fff7d8] p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-12 rounded-2xl border bg-secondary/60 p-6">
+          <p className="text-sm font-semibold text-primary">
             Bottom line
           </p>
           <h2 className="mt-2 text-xl font-semibold">

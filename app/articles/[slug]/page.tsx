@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
         <Button
           asChild
           variant="outline"
-          className="mb-10 rounded-none border-orange-900/20 bg-transparent font-semibold hover:bg-accent"
+          className="mb-10 rounded-full bg-background/70 font-semibold hover:bg-accent"
         >
           <Link href="/articles">
             <ArrowLeft />
@@ -84,10 +84,10 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
           </Link>
         </Button>
 
-        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
+        <p className="mb-4 text-sm font-semibold text-primary">
           {article.category}
         </p>
-        <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+        <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
           {article.title}
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -109,7 +109,7 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
           </p>
         </section>
 
-        <section className="mt-12 border border-orange-900/20 bg-card p-6">
+        <section className="mt-12 rounded-2xl border bg-card p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">The Workflow</h2>
           <p className="mt-3 leading-7 text-muted-foreground">
             Use this as a simple starting point. The exact details can change,
@@ -134,13 +134,13 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
           </div>
         </section>
 
-        <section className="mt-12 border border-orange-900/20 bg-card p-6">
+        <section className="mt-12 rounded-2xl border bg-card p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">Common Mistakes</h2>
           <Checklist items={article.pitfalls} />
         </section>
 
-        <section className="mt-12 border-l-4 border-primary bg-[#fff7d8] p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-12 rounded-2xl border bg-secondary/60 p-6">
+          <p className="text-sm font-semibold text-primary">
             Bottom line
           </p>
           <h2 className="mt-2 text-xl font-semibold">

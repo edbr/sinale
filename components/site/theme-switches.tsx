@@ -53,7 +53,7 @@ export function ThemeSwitches() {
   }
 
   return (
-    <div className="flex items-center border border-orange-900/20 bg-background/70">
+    <div className="flex items-center overflow-hidden rounded-full border bg-background/70">
       <button
         type="button"
         role="switch"
@@ -61,7 +61,7 @@ export function ThemeSwitches() {
         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
         title={isDark ? "Light mode" : "Dark mode"}
         onClick={toggleDark}
-        className="inline-flex size-8 items-center justify-center border-r border-orange-900/20 text-muted-foreground transition hover:bg-accent hover:text-foreground aria-checked:bg-foreground aria-checked:text-background"
+        className="inline-flex size-8 items-center justify-center border-r text-muted-foreground transition hover:bg-accent hover:text-foreground aria-checked:bg-foreground aria-checked:text-background"
       >
         {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
       </button>

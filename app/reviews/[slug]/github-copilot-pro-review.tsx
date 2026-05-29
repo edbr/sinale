@@ -56,7 +56,7 @@ export function GitHubCopilotProReview() {
         <Button
           asChild
           variant="outline"
-          className="mb-10 rounded-none border-orange-900/20 bg-transparent font-semibold hover:bg-accent"
+          className="mb-10 rounded-full bg-background/70 font-semibold hover:bg-accent"
         >
           <Link href="/reviews">
             <ArrowLeft />
@@ -64,19 +64,19 @@ export function GitHubCopilotProReview() {
           </Link>
         </Button>
 
-        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
+        <p className="mb-4 text-sm font-semibold text-primary">
           Review
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
           GitHub Copilot Pro Review (2026): Still the Easiest AI Coding
           Assistant to Recommend
         </h1>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <span className="border border-orange-900/20 bg-[#fff7d8] px-3 py-1.5 text-sm font-semibold">
+          <span className="rounded-full border bg-secondary/70 px-3 py-1.5 text-sm font-semibold">
             8.5/10 rating
           </span>
-          <span className="border border-orange-900/20 bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground">
+          <span className="rounded-full border bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground">
             Best for GitHub-first developers
           </span>
         </div>
@@ -127,13 +127,13 @@ export function GitHubCopilotProReview() {
           </h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {useCases.map((useCase) => (
-              <div key={useCase} className="border border-orange-900/15 bg-card p-4">
+              <div key={useCase} className="rounded-xl border bg-card p-4 shadow-sm">
                 <p className="text-sm font-medium">{useCase}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 border-l-4 border-primary bg-[#fff7d8] p-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
+          <div className="mt-6 rounded-2xl border bg-secondary/60 p-5">
+            <p className="text-sm font-semibold text-primary">
               Example prompt
             </p>
             <p className="mt-3 leading-7">
@@ -154,7 +154,7 @@ export function GitHubCopilotProReview() {
           </h2>
           <div className="mt-5 grid gap-4">
             {strengths.map((strength) => (
-              <div key={strength.title} className="border border-orange-900/15 bg-card p-5">
+              <div key={strength.title} className="rounded-2xl border bg-card p-5 shadow-sm">
                 <h3 className="font-semibold">{strength.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {strength.body}
@@ -195,14 +195,14 @@ export function GitHubCopilotProReview() {
             Copilot Pro vs Cursor
           </h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Choose Copilot Pro if</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 You want AI assistance inside your current IDE, you use GitHub
                 heavily, and you value low setup over an AI-native editor.
               </p>
             </div>
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Choose Cursor if</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 You want deeper codebase-aware editing, stronger multi-file
@@ -233,8 +233,8 @@ export function GitHubCopilotProReview() {
           </p>
         </section>
 
-        <section className="mt-12 border border-orange-900/20 bg-card p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-12 rounded-2xl border bg-card p-6 shadow-sm">
+          <p className="text-sm font-semibold text-primary">
             Final call
           </p>
           <h2 className="mt-2 text-2xl font-semibold">Verdict</h2>
@@ -253,8 +253,8 @@ export function GitHubCopilotProReview() {
         </section>
 
         <section className="mt-12 grid gap-4 md:grid-cols-2">
-          <div className="border border-orange-900/20 bg-[#fff7d8] p-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
+          <div className="rounded-2xl border bg-secondary/60 p-5">
+            <p className="text-sm font-semibold text-primary">
               What works
             </p>
             <h2 className="mt-2 text-xl font-semibold">Pros</h2>
@@ -267,8 +267,8 @@ export function GitHubCopilotProReview() {
               ))}
             </div>
           </div>
-          <div className="border border-orange-900/20 bg-card p-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
+            <p className="text-sm font-semibold text-muted-foreground">
               Watch-outs
             </p>
             <h2 className="mt-2 text-xl font-semibold">Cons</h2>
@@ -283,8 +283,8 @@ export function GitHubCopilotProReview() {
           </div>
         </section>
 
-        <section className="mt-12 border-l-4 border-primary bg-[#fff7d8] p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-12 rounded-2xl border bg-secondary/60 p-6">
+          <p className="text-sm font-semibold text-primary">
             Bottom line
           </p>
           <h2 className="mt-2 text-xl font-semibold">

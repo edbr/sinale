@@ -34,7 +34,7 @@ export default function AboutPage() {
           <p className="mb-4 text-sm font-medium text-muted-foreground">
             About Sinale
           </p>
-          <h1 className="max-w-4xl text-5xl font-heading font-extrabold leading-[0.95] tracking-[-0.05em] md:text-7xl">
+          <h1 className="max-w-4xl text-5xl font-heading font-semibold leading-[1.02] tracking-tight md:text-7xl">
             AI tool guidance from a product designer who actually uses the
             stack.
           </h1>

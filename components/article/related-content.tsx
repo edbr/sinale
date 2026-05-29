@@ -27,21 +27,21 @@ export function RelatedContent({
       className={cn(
         "mt-12",
         isEditorial
-          ? "border-y border-orange-900/20 bg-[#fff7d8] px-0 py-8"
+          ? "rounded-2xl border bg-secondary/50 px-0 py-8"
           : "border-t pt-10"
       )}
     >
       <div className={cn(isEditorial && "mb-6 flex items-end justify-between gap-4 px-5")}>
         <div>
           {isEditorial ? (
-            <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-primary">
+            <p className="mb-2 text-sm font-semibold text-primary">
               Next reads
             </p>
           ) : null}
           <h2
             className={cn(
               isEditorial
-                ? "font-heading text-3xl font-black uppercase tracking-normal"
+                ? "font-heading text-3xl font-semibold tracking-normal"
                 : "text-2xl font-semibold"
             )}
           >
@@ -49,7 +49,7 @@ export function RelatedContent({
           </h2>
         </div>
         {isEditorial ? (
-          <div className="hidden h-px flex-1 bg-orange-900/20 sm:block" />
+          <div className="hidden h-px flex-1 bg-border sm:block" />
         ) : null}
       </div>
       <div className={cn(isEditorial ? "grid" : "mt-5 grid gap-3")}>
@@ -60,7 +60,7 @@ export function RelatedContent({
             className={cn(
               "group transition",
               isEditorial
-                ? "border-t border-orange-900/20 bg-transparent px-5 py-5 last:border-b hover:bg-background/60"
+                ? "border-t bg-transparent px-5 py-5 last:border-b hover:bg-background/60"
                 : "rounded-lg border bg-card p-4 hover:-translate-y-0.5 hover:shadow-md"
             )}
           >
@@ -68,7 +68,7 @@ export function RelatedContent({
               <div className="min-w-0">
                 <div className="flex items-start gap-3">
                   {isEditorial ? (
-                    <span className="mt-1 w-8 shrink-0 text-xs font-black uppercase tracking-[0.18em] text-primary">
+                    <span className="mt-1 w-8 shrink-0 text-sm font-semibold text-primary">
                       0{index + 1}
                     </span>
                   ) : (
@@ -81,7 +81,7 @@ export function RelatedContent({
                   <h3
                     className={cn(
                       isEditorial
-                        ? "font-heading text-xl font-black uppercase leading-6"
+                        ? "font-heading text-xl font-semibold leading-6"
                         : "font-semibold leading-6"
                     )}
                   >
@@ -91,7 +91,7 @@ export function RelatedContent({
                 <p
                   className={cn(
                     "text-sm leading-6 text-muted-foreground",
-                    isEditorial ? "mt-3 pl-11 font-medium" : "mt-2"
+                    isEditorial ? "mt-3 pl-11" : "mt-2"
                   )}
                 >
                   {item.description}

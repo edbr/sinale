@@ -16,7 +16,7 @@ export default function ContactPage() {
         <p className="mb-4 text-sm font-medium text-muted-foreground">
           Contact
         </p>
-        <h1 className="text-5xl font-heading font-extrabold leading-[0.95] tracking-[-0.05em] md:text-7xl">
+        <h1 className="text-5xl font-heading font-semibold leading-[1.02] tracking-tight md:text-7xl">
           Questions, feedback, partnership opportunities, or tool
           recommendations?
         </h1>

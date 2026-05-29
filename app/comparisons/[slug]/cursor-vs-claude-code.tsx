@@ -64,7 +64,7 @@ export function CursorVsClaudeCodeComparison() {
         <Button
           asChild
           variant="outline"
-          className="mb-10 rounded-none border-orange-900/20 bg-transparent font-semibold hover:bg-accent"
+          className="mb-10 rounded-full bg-background/70 font-semibold hover:bg-accent"
         >
           <Link href="/comparisons">
             <ArrowLeft />
@@ -72,10 +72,10 @@ export function CursorVsClaudeCodeComparison() {
           </Link>
         </Button>
 
-        <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-primary">
+        <p className="mb-4 text-sm font-semibold text-primary">
           Comparison
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
           Cursor vs Claude Code (2026): Which AI Coding Assistant Should You
           Use?
         </h1>
@@ -100,10 +100,10 @@ export function CursorVsClaudeCodeComparison() {
           </p>
         </div>
 
-        <section className="mt-12 border border-orange-900/20 bg-[#fff7d8] p-6 shadow-[0_12px_40px_rgba(51,33,22,0.08)]">
+        <section className="mt-12 rounded-2xl border bg-secondary/60 p-6 shadow-sm">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+              <p className="text-sm font-semibold text-primary">
                 Decision guide
               </p>
               <h2 className="mt-2 text-2xl font-semibold">Quick Verdict</h2>
@@ -112,7 +112,7 @@ export function CursorVsClaudeCodeComparison() {
               Cursor for shipping. Claude Code for reasoning.
             </p>
           </div>
-          <div className="mt-5 divide-y divide-orange-900/15 border border-orange-900/20 bg-background/70">
+          <div className="mt-5 divide-y rounded-xl border bg-background/70">
             {verdictRows.map(([category, winner]) => (
               <div
                 key={category}
@@ -124,11 +124,11 @@ export function CursorVsClaudeCodeComparison() {
             ))}
           </div>
           <div className="mt-5 grid gap-3 text-sm md:grid-cols-2">
-            <p className="border border-orange-900/20 bg-card p-4">
+            <p className="rounded-xl border bg-card p-4">
               <span className="font-semibold">Best for most developers:</span>{" "}
               Cursor
             </p>
-            <p className="border border-orange-900/20 bg-card p-4">
+            <p className="rounded-xl border bg-card p-4">
               <span className="font-semibold">Best for deep reasoning:</span>{" "}
               Claude Code
             </p>
@@ -136,7 +136,7 @@ export function CursorVsClaudeCodeComparison() {
         </section>
 
         <section className="mt-12 grid gap-4 md:grid-cols-2">
-          <div className="border border-orange-900/15 bg-card p-5">
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <h2 className="text-2xl font-semibold">What is Cursor?</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
               Cursor is an AI-first code editor built on top of VS Code. It
@@ -160,7 +160,7 @@ export function CursorVsClaudeCodeComparison() {
             </div>
           </div>
 
-          <div className="border border-orange-900/15 bg-card p-5">
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <h2 className="text-2xl font-semibold">What is Claude Code?</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
               Claude Code is Anthropic&apos;s agentic coding experience built
@@ -189,7 +189,7 @@ export function CursorVsClaudeCodeComparison() {
           <h2 className="text-2xl font-semibold">Where Cursor Wins</h2>
           <div className="mt-5 grid gap-4">
             {cursorWins.map((item) => (
-              <div key={item.title} className="border border-orange-900/15 bg-card p-5">
+              <div key={item.title} className="rounded-2xl border bg-card p-5 shadow-sm">
                 <h3 className="font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.body}
@@ -203,7 +203,7 @@ export function CursorVsClaudeCodeComparison() {
           <h2 className="text-2xl font-semibold">Where Claude Code Wins</h2>
           <div className="mt-5 grid gap-4">
             {claudeWins.map((item) => (
-              <div key={item.title} className="border border-orange-900/15 bg-card p-5">
+              <div key={item.title} className="rounded-2xl border bg-card p-5 shadow-sm">
                 <h3 className="font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.body}
@@ -218,14 +218,14 @@ export function CursorVsClaudeCodeComparison() {
             Cursor vs Claude Code for Next.js
           </h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Cursor is better for</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 Creating components, generating pages, refactoring UI, building
                 features, and implementing designs.
               </p>
             </div>
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Claude Code is better for</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 Architecture decisions, data flow analysis, performance
@@ -249,13 +249,13 @@ export function CursorVsClaudeCodeComparison() {
             The difference is workflow.
           </p>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Cursor optimizes</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Prompt, generate, edit, ship.
               </p>
             </div>
-            <div className="border border-orange-900/15 bg-card p-5">
+            <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h3 className="font-semibold">Claude optimizes</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Understand, analyze, recommend, implement.
@@ -265,7 +265,7 @@ export function CursorVsClaudeCodeComparison() {
         </section>
 
         <section className="mt-12 grid gap-4 md:grid-cols-2">
-          <div className="border border-orange-900/15 bg-card p-5">
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <h2 className="text-2xl font-semibold">Who Should Use Cursor?</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
               Cursor is ideal for software engineers, startup founders, product
@@ -274,7 +274,7 @@ export function CursorVsClaudeCodeComparison() {
               Cursor is difficult to beat.
             </p>
           </div>
-          <div className="border border-orange-900/15 bg-card p-5">
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <h2 className="text-2xl font-semibold">
               Who Should Use Claude Code?
             </h2>
@@ -297,8 +297,8 @@ export function CursorVsClaudeCodeComparison() {
           </p>
         </section>
 
-        <section className="mt-12 border border-orange-900/20 bg-card p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-12 rounded-2xl border bg-card p-6 shadow-sm">
+          <p className="text-sm font-semibold text-primary">
             Final call
           </p>
           <h2 className="mt-2 text-2xl font-semibold">Verdict</h2>
@@ -313,19 +313,19 @@ export function CursorVsClaudeCodeComparison() {
             difficult engineering challenges is genuinely impressive.
           </p>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
-            <p className="border border-orange-900/15 bg-background p-4">
+            <p className="rounded-xl border bg-background p-4">
               <span className="font-semibold">Cursor Rating:</span> 9/10. Best
               for implementation and daily coding.
             </p>
-            <p className="border border-orange-900/15 bg-background p-4">
+            <p className="rounded-xl border bg-background p-4">
               <span className="font-semibold">Claude Code Rating:</span> 9/10.
               Best for reasoning, architecture, and technical analysis.
             </p>
           </div>
         </section>
 
-        <section className="mt-8 border-l-4 border-primary bg-[#fff7d8] p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-primary">
+        <section className="mt-8 rounded-2xl border bg-secondary/60 p-6">
+          <p className="text-sm font-semibold text-primary">
             Bottom line
           </p>
           <h2 className="mt-2 text-xl font-semibold">Use both if you can.</h2>

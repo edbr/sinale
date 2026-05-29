@@ -27,18 +27,18 @@ export function ArticleCta({ tool, href, placement }: ArticleCtaProps) {
     <aside
       className={
         isBottom
-          ? "relative mt-12 overflow-hidden border border-orange-900/20 bg-[#fff7d8] p-6 text-foreground shadow-[0_16px_44px_rgba(51,33,22,0.1)]"
-          : "mt-10 border border-orange-900/15 bg-card/80 p-5"
+          ? "relative mt-12 overflow-hidden rounded-2xl border bg-secondary/60 p-6 text-foreground shadow-sm"
+          : "mt-10 rounded-2xl border bg-card/80 p-5 shadow-sm"
       }
     >
       {isBottom ? (
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-[repeating-linear-gradient(135deg,rgba(239,106,74,0.16)_0_10px,transparent_10px_20px)]" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-[radial-gradient(circle_at_center,oklch(100%_0_0/.55)_0_1px,transparent_1px_14px)]" />
       ) : null}
       <p
         className={
           isBottom
-            ? "text-xs font-black uppercase tracking-[0.18em] text-primary"
-            : "text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground"
+            ? "text-sm font-semibold text-primary"
+            : "text-sm font-medium text-muted-foreground"
         }
       >
         {content.label}
@@ -57,8 +57,8 @@ export function ArticleCta({ tool, href, placement }: ArticleCtaProps) {
           rel="noreferrer sponsored"
           className={
             isBottom
-              ? "inline-flex h-12 items-center justify-center border border-foreground bg-foreground px-6 text-sm font-bold text-background shadow-[4px_4px_0_rgba(51,33,22,0.18)] transition hover:-translate-y-0.5 hover:bg-primary"
-              : "inline-flex h-11 items-center justify-center border border-foreground bg-foreground px-5 text-sm font-semibold text-background transition hover:bg-primary"
+              ? "inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:bg-primary/90"
+              : "inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           }
         >
           {placement === "top"

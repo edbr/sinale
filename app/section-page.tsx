@@ -224,7 +224,7 @@ export function SectionPage({
           className={cn(
             "mb-10",
             isPoster
-              ? "rounded-none border-2 border-foreground bg-transparent font-black uppercase tracking-[0.12em] hover:bg-accent"
+              ? "rounded-full bg-background/60 font-semibold hover:bg-accent"
               : "px-0"
           )}
         >
@@ -238,7 +238,7 @@ export function SectionPage({
           className={cn(
             "mb-4",
             isPoster
-              ? "text-xs font-black uppercase tracking-[0.34em] text-primary"
+              ? "text-sm font-semibold text-primary"
               : "text-sm font-medium text-muted-foreground"
           )}
         >
@@ -248,7 +248,7 @@ export function SectionPage({
           className={cn(
             "max-w-4xl",
             isPoster
-              ? "font-heading text-6xl font-black uppercase leading-[0.86] tracking-normal md:text-8xl"
+              ? "font-heading text-5xl font-semibold leading-[0.95] tracking-normal md:text-7xl"
               : "text-5xl font-semibold tracking-tight md:text-7xl"
           )}
         >
@@ -262,7 +262,7 @@ export function SectionPage({
           <div
             className={cn(
               "mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3",
-              isPoster && "border-2 border-foreground bg-[#fff7d8] p-4 shadow-[12px_12px_0_rgba(51,33,22,0.16)]"
+              isPoster && "rounded-2xl border bg-card/80 p-4 shadow-sm"
             )}
           >
             {items.map((item) => {
@@ -275,7 +275,7 @@ export function SectionPage({
                   className={cn(
                     "group bg-card p-6 transition hover:-translate-y-1",
                     isPoster
-                      ? "border-2 border-foreground shadow-[6px_6px_0_rgba(51,33,22,0.16)] hover:bg-background hover:shadow-[10px_10px_0_rgba(51,33,22,0.18)]"
+                      ? "rounded-xl border shadow-sm hover:border-primary/25 hover:shadow-lg"
                       : "rounded-lg border hover:shadow-lg"
                   )}
                 >
@@ -288,14 +288,14 @@ export function SectionPage({
                           name={comparisonTools[0]}
                           domain={item.domain}
                           logo={item.logo}
-                          className="size-10 border border-foreground"
+                          className="size-10 rounded-lg border"
                         />
-                        <span className="text-xs font-black uppercase tracking-[0.24em] text-primary">
+                        <span className="text-sm font-semibold text-primary">
                           vs
                         </span>
                         <ToolLogo
                           name={comparisonTools[1]}
-                          className="size-10 border border-foreground"
+                          className="size-10 rounded-lg border"
                         />
                       </div>
                     ) : (
@@ -303,7 +303,7 @@ export function SectionPage({
                         name={getCardLogoTool(item)}
                         domain={item.domain}
                         logo={item.logo}
-                        className={cn("size-10", isPoster ? "border border-foreground" : "rounded-lg")}
+                        className={cn("size-10 rounded-lg", isPoster && "border")}
                       />
                     )}
                     <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-foreground" />
@@ -311,7 +311,7 @@ export function SectionPage({
                   <h2
                     className={cn(
                       isPoster
-                        ? "font-heading text-xl font-black uppercase leading-6"
+                        ? "font-heading text-xl font-semibold leading-6"
                         : "text-xl font-semibold"
                     )}
                   >
@@ -324,7 +324,7 @@ export function SectionPage({
                     className={cn(
                       "mt-6 inline-flex items-center gap-1",
                       isPoster
-                        ? "text-xs font-black uppercase tracking-[0.16em] text-primary"
+                        ? "text-sm font-semibold text-primary"
                         : "text-sm font-medium"
                     )}
                   >
