@@ -128,6 +128,7 @@ export default function HomePage() {
           </p>
           <h1 className="hero-reveal hero-reveal-delay-1 editorial-display max-w-5xl text-foreground">
             Find the <span className="text-primary">right AI tools</span> for the way you work.
+            Impact-Site-Verification: 1321ef41-cba2-4dc3-8aec-58d8baf072d1
           </h1>
 
           <p className="hero-reveal hero-reveal-delay-2 mt-6 max-w-2xl text-lg leading-6 text-muted-foreground">
