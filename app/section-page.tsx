@@ -8,12 +8,17 @@ import {
   CalendarDays,
   ClipboardCheck,
   Code2,
+  Coffee,
   DatabaseZap,
   FileQuestion,
   FileText,
+  Headphones,
+  Laptop,
+  Link2,
   Mail,
   Map,
   Megaphone,
+  Monitor,
   PenTool,
   Phone,
   RefreshCw,
@@ -21,6 +26,7 @@ import {
   Search,
   Share2,
   ShieldCheck,
+  Video,
   Users,
   type LucideIcon,
 } from "lucide-react"
@@ -147,6 +153,34 @@ const workflowIcons: Record<string, WorkflowIconConfig> = {
   "ai-crm-cleanup": {
     icon: DatabaseZap,
     className: "bg-teal-100 text-teal-700 border-teal-200",
+  },
+  "founder-desk-setup-2026": {
+    icon: Laptop,
+    className: "bg-indigo-100 text-indigo-700 border-indigo-200",
+  },
+  "content-creator-stack-2026": {
+    icon: Video,
+    className: "bg-rose-100 text-rose-700 border-rose-200",
+  },
+  "remote-work-setup-2026": {
+    icon: Monitor,
+    className: "bg-emerald-100 text-emerald-700 border-emerald-200",
+  },
+  "ai-developer-setup-2026": {
+    icon: Headphones,
+    className: "bg-sky-100 text-sky-700 border-sky-200",
+  },
+  "everyday-tech-essentials-2026": {
+    icon: Link2,
+    className: "bg-amber-100 text-amber-700 border-amber-200",
+  },
+  "desk-accessories-cable-management-2026": {
+    icon: DatabaseZap,
+    className: "bg-cyan-100 text-cyan-700 border-cyan-200",
+  },
+  "coffee-aficionado-espresso-setup-2026": {
+    icon: Coffee,
+    className: "bg-stone-100 text-stone-700 border-stone-200",
   },
 }
 

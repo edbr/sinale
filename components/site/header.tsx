@@ -11,6 +11,7 @@ const primaryNav = [
   { label: "Reviews", href: "/reviews" },
   { label: "Best Of", href: "/best" },
   { label: "Workflows", href: "/workflows" },
+  { label: "Setups", href: "/setups" },
   { label: "Tools", href: "/tools" },
 ]
 

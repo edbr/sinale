@@ -71,6 +71,30 @@ export default function DisclosurePage() {
             </p>
           </section>
 
+<section className="rounded-xl border border-border bg-muted/30 p-6">
+  <h2 className="text-2xl font-semibold text-foreground">
+    Our Recommendation Process
+  </h2>
+
+  <p className="mt-3">
+    Sinale is supported in part through affiliate partnerships. When readers
+    purchase products or services through certain links, we may earn a
+    commission at no additional cost to them.
+  </p>
+
+  <p className="mt-3">
+    Every recommendation is evaluated through the lens of workflow clarity,
+    product quality, usability, value, and long-term fit. We prioritize tools
+    that help founders, developers, designers, and operators work more
+    effectively.
+  </p>
+
+  <p className="mt-3">
+    Affiliate relationships never determine our rankings, conclusions, or
+    recommendations.
+  </p>
+</section>
+
           <section>
             <h2 className="text-2xl font-semibold text-foreground">Questions</h2>
             <p className="mt-3">
